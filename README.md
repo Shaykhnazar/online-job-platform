@@ -1,56 +1,39 @@
-<h1 align="center"><img src="https://assets.infyom.com/open-source/infyom-logo.png" alt="InfyOm"></h1>
+## Oppotunity
+Opportunity is an online job portal.
 
-CoreUI Generator
-==========================
+19 February 2020 - Present
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+> A Project Under **PHP Laravel Framework Training** Program.
+**Institute:** Lucid Maze
 
-If you are starting fresh new laravel project, then boilerplates can be the best option for you to get started. It gives you a full laravel project with everything installed and published.
+<img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="200">
 
-Read [Documentation](http://www.infyom.com/open-source/laravelgenerator/docs/8.0/boilerplates) for detailed installation steps and usage.
+### Technologies:
+- **Language:** PHP
+- **Framework:** Laravel 6.x
+- **CSS Framework:** Bootstrap 4
+- **Database:** MySQL
+- HTML, CSS
+- **Text Editor:** Sublime Text 
 
-## Support Us
+### Features:
+**Job Seeker:**
+- View all types of jobs
+- Can apply directly
+- Can search job
+- Can filter job category 
 
-We have created [14+ Laravel packages](https://github.com/InfyOmLabs) and invested a lot of resources into creating these all packages and maintaining them.
+**Employer:**
+- Can post job
+- Can view applied candidate profile
 
-You can support us by either sponsoring us or buying one of our paid products. Or help us by spreading the word about us on social platforms via tweets and posts.
+**Screenshots**
 
-### Sponsors
+1. Home Page:
 
-[Become a sponsor](https://opencollective.com/infyomlabs#sponsor) and get your logo on our README on Github with a link to your site.
+![job_portal_index_page](https://user-images.githubusercontent.com/23233774/99152318-4606cf00-26cb-11eb-9f3e-1cfb0804f223.png)
 
-<a href="https://opencollective.com/infyomlabs#sponsor"><img src="https://opencollective.com/infyomlabs/sponsors.svg?width=890"></a>
+2. Job Search Result Page:
 
-### Backers
-
-[Become a backer](https://opencollective.com/infyomlabs#backer) and get your image on our README on Github with a link to your site.
-
-<a href="https://opencollective.com/infyomlabs#backer"><img src="https://opencollective.com/infyomlabs/backers.svg?width=890"></a>
-
-### Buy our Paid Products
-
-[![InfyJobs](https://assets.infyom.com/open-source/infyjobs-banner.png)](https://1.envato.market/P0ONVj)
-
-You can also check out our other paid products on [CodeCanyon](https://codecanyon.net/user/infyomlabs/portfolio).
-
-### Follow Us
-
-- [Twitter](https://twitter.com/infyom)
-- [Facebook](https://www.facebook.com/infyom)
-- [LinkedIn](https://in.linkedin.com/company/infyom-technologies)
-- [Youtube](https://www.youtube.com/channel/UC8IvwfChD6i7Wp4yZp3tNsQ)
-- [Contact Us](https://infyom.com/contact-us)
-
-## Made with InfyOm Generator
-
-Also, Do not forget to add your website to [Made with InfyOm Generator List](https://github.com/InfyOmLabs/laravel-generator/blob/develop/made-with-generator.md) list.
-
-## Video Tutorials
-
-Checkout [Video Tutorials](https://github.com/shailesh-ladumor/infyom-laravel-generator-tutorial) - **By**: [Shailesh Ladumor](https://github.com/shailesh-ladumor)
+![it_jobs](https://user-images.githubusercontent.com/23233774/99152314-443d0b80-26cb-11eb-8644-bbd0952da920.png)
 

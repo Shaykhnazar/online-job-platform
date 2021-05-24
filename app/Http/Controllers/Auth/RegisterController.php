@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
+use App\User;
+use App\Employeer;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -29,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -39,6 +42,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:user');
+        $this->middleware('guest:employeer');
     }
 
     /**
@@ -60,7 +65,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return \App\User
      */
     protected function create(array $data)
     {
@@ -69,5 +74,30 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        return redirect()->intended('login/user');
+    }
+
+    public function showUserRegisterForm()
+    {
+        return view('auth.register', ['url' => 'user']);
+    }
+
+    public function showEmployeerRegisterForm()
+    {
+        return view('auth.register', ['url' => 'employeer']);
+    }
+
+    protected function createEmployeer(Request $request)
+    {   
+        $employeer = Employeer::create([
+            'name' => $request['name'],
+            'website' => $request['website'],
+            'email' => $request['email'],
+            'company_type' => $request['company_type'],
+            'mobile' => $request['mobile'],
+            'address' => $request['address'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('login/employeer');
     }
 }

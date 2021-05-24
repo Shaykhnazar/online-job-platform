@@ -1,10 +1,15 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
-  <div class="container-fluid">
-        <div class="animated fadeIn">
-             <div class="row">
+<div class="container" style="margin-top: 8%">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
+                <div class="card-body">
+                     Hi there, regular user
+                </div>
             </div>
         </div>
     </div>
