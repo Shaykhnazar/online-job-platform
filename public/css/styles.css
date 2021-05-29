@@ -1,0 +1,31 @@
+body
+{
+  background-color: white;
+}
+.card:hover {
+    border: solid 1px #cccccc;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+#inputEmail4, #inputPassword4
+{
+    border:solid 1px #cccccc;
+
+}
+#about a
+{
+    text-decoration: none;
+}
+a:hover
+{
+    color: blue;
+}
+#categories li > a
+{
+    font-size: 14px;
+}

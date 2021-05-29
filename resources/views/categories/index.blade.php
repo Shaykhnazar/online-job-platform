@@ -17,6 +17,7 @@
 						<th>ID</th>
 						<th class="text-left">Category Name</th>
 						<th>No. of Current Jobs</th>
+						<th>Featured</th>
 						<th>Option</th>
 					</tr>
 				</thead>
@@ -26,8 +27,9 @@
 							<td>{{$category->category_id}}</td>
 							<td class="text-left">{{$category->category_name}}</td>
 							<td>{{$category->no_jobs}}</td>
+							<td>{{ ($category->featured) ? 'Yes' : 'No'}}</td>
 							<td>
-								<a href='/categories/edit/{{$category->category_id}}' style="color: blue; text-decoration: underline;">Edit</a> | 
+								<a href='/categories/edit/{{$category->category_id}}' style="color: blue; text-decoration: underline;">Edit</a> |
 								<a href='/categories/delete/{{$category->category_id}}' style="color: blue; text-decoration: underline;">Delete</a>
 							</td>
 						</tr>

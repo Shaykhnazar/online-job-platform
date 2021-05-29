@@ -15,7 +15,7 @@
 				    <label>Category ID</label>
 				    <p class="form-control">{{$category->category_id}}</p>
 			  	</div>
-			    <div class="form-group col-md-6">
+			    <div class="form-group col-md-4">
 				    <label>Category Name</label>
 				    <input type="text" class="form-control"  name="category_name" value="{{$category->category_name}}">
 			  	</div>
@@ -23,6 +23,13 @@
 			      <label>Number of current Job</label>
 			      <input type="number" class="form-control"  name="no_jobs" value="{{$category->no_jobs}}">
 			    </div>
+			    <div class="form-group col-md-2">
+			      <label>Featured</label>
+                    <select name="featured" class="form-control">
+                        <option value="1" {{ ($category->featured) ? 'selected' : '' }}>Yes</option>
+                        <option value="0" {{ (!$category->featured) ? 'selected' : '' }}>No</option>
+                    </select>
+                </div>
 			    <div class="form-group col-md-2">
 			      <label>&nbsp;</label>
 			      <button type="submit" class=" form-control btn btn-primary font-weight-bold">Update</button>

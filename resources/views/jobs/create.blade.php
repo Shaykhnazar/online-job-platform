@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<?php 
-	use App\Category; 
+<?php
+	use App\Category;
 ?>
 @extends('layout.app')
 @section('content')
@@ -34,10 +34,9 @@
 			    <div class="form-group col-md-2">
 				    <label for="exampleFormControlSelect1">Employment Status</label>
 				    <select class="form-control"  name="employment_type">
-				      <option value="Full-time">Full-time</option>
-				      <option value="Part-time">Part-time</option>
-				      <option value="Internship">Internship</option>
-				      <option value="Contractual">Contractual</option>
+                        @foreach(\App\Job::$TYPE as $key => $type)
+                            <option value="{{$key}}">{{$type}}</option>
+                        @endforeach
 				    </select>
 			  </div>
 			  <div class="form-group col-md-2">
@@ -46,14 +45,10 @@
 			  </div>
 			    <div class="form-group col-md-2">
 			      <label for="inputState">Location</label>
-			      <select id="inputState" class="form-control" name="location">
-			        <option selected value="Dhaka">Dhaka</option>
-			        <option value="Chattagram">Chattagram</option>
-			        <option value="Khulna">Khulna</option>
-			        <option value="Sylhet">Sylhet</option>
-			        <option value="Barisal">Barisal</option>
-			        <option value="Gazipur">Gazipur</option>
-			        <option value="Anywhere in Bangladesh">Anywhere in Bangladesh</option>
+			      <select id="inputState" class="form-control" name="region_id">
+                      @foreach(\App\Region::get(['id', 'name']) as $region)
+                          <option value="{{$region->id}}">{{$region->name}}</option>
+                      @endforeach
 			      </select>
 			    </div>
 			    <div class="form-group col-md-3">
@@ -65,8 +60,8 @@
 			      </select>
 			    </div>
 			    <div class="form-group col-md-3">
-			      <label for="inputZip">Age Range</label>
-			      <input type="text" class="form-control" name="age">
+			      <label for="inputZip">Age Range = <span id="rangeValue"></span></label>
+			      <input id="rangeInput" type="range" class="form-control" name="age" min="18" max="100" onchange="updateTextInput(this.value);">
 			    </div>
 			  </div>
 			  <div class="form-row">
@@ -118,9 +113,14 @@
 			  <div class="text-center">
 			  	<button type="submit" class="btn btn-primary col-lg-2 font-weight-bold text-center">Post</button>
 			  </div>
-			  
+
 			</form>
 		</div>
+    <script>
+        function updateTextInput(val) {
+            document.getElementById('rangeValue').innerText = val;
+        }
+    </script>
 	</body>
 </html>
 @endsection

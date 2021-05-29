@@ -2,236 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ce780a3-5b70-4b01-9a69-407337b009ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/jquery.DonutWidget.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/jquerysctipttop.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/linearicons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/main.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/nice-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/owl.carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/theme/pages.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Linearicons-Free.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Linearicons-Free.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Linearicons-Free.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Linearicons-Free.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Linearicons-Free.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/b1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/b2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/blog-banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/c1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/c3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/c4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/c5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/l1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/l2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/l3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/l4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/next.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/p1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/p3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/p4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/prev.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/r1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/r2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/r3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/r4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/s-img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/slider.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/user.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog/user2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/blog2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/d1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/a2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/disabled-check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/disabled-radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/f8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/g8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/primary-check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/primary-radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/success-check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/elements/success-radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/header-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/i8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/o1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/o2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/o3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/o4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/o5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/o6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/p1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/p2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pages/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pages/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pages/list.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pages/t1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pages/t2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pages/t3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pages/t4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/play-btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/post.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/r1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/r1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/r2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/t1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/t2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/t3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/user.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/hoverIntent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.ajaxchimp.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.nice-select.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.sticky.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/mail-script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/parallax.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/superfish.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/superfish.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/vendor/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/vendor/jquery-2.2.4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_badge.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_breadcrumb.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_button-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_card.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_carousel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_close.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_code.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_custom-forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_images.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_input-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_jumbotron.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_media.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_modal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_popover.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_print.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_progress.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_reboot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_root.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_tables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_tooltip.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_transitions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_type.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_utilities.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/bootstrap-grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/bootstrap-reboot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/bootstrap.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_background-variant.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_badge.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_border-radius.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_box-shadow.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_breakpoints.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_caret.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_float.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_gradients.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_grid-framework.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_hover.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_image.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_lists.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_nav-divider.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_navbar-align.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_reset-text.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_resize.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_size.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_table-row.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_text-emphasis.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_text-hide.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_text-truncate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_transition.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/mixins/_visibility.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_align.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_background.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_borders.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_display.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_embed.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_flex.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_float.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_position.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_screenreaders.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_sizing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_spacing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_text.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/bootstrap/utilities/_visibility.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_elements.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_flexbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_home.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_pages.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scss/theme/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/job-portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/job-portal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_29_192132_create_education_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_29_192132_create_education_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employeers/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employeers/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jobs/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jobs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jobs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jobs/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jobs/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +37,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -283,7 +86,6 @@
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
@@ -291,11 +93,8 @@
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
@@ -337,6 +136,15 @@
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/php-parallel-lint/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/php-parallel-lint/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
     </include_path>
   </component>
   <component name="ProjectId" id="1szoJft9mvkpdcJ1VOvuMGPmYlM" />
@@ -346,18 +154,23 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\Laravel\online-job-platform\resources\views" />
+      <recent name="D:\PROJECTS\Laravel\online-job-platform\resources\views\users" />
+      <recent name="D:\PROJECTS\Laravel\online-job-platform\app" />
+      <recent name="D:\PROJECTS\Laravel\online-job-platform\database\seeds" />
       <recent name="D:\PROJECTS\Laravel\online-job-platform\resources\sass" />
-      <recent name="D:\PROJECTS\Laravel\online-job-platform\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROJECTS\Laravel\online-job-platform\public" />
@@ -382,7 +195,15 @@
       <option name="presentableId" value="Default" />
       <updated>1621884709813</updated>
       <workItem from="1621884728523" duration="326000" />
-      <workItem from="1621885271654" duration="972000" />
+      <workItem from="1621885271654" duration="3400000" />
+      <workItem from="1621937443937" duration="11817000" />
+      <workItem from="1622006508177" duration="1300000" />
+      <workItem from="1622044283981" duration="66000" />
+      <workItem from="1622104969332" duration="1111000" />
+      <workItem from="1622118777660" duration="7453000" />
+      <workItem from="1622134953486" duration="10000" />
+      <workItem from="1622199678798" duration="12869000" />
+      <workItem from="1622283088381" duration="7676000" />
     </task>
     <servers />
   </component>

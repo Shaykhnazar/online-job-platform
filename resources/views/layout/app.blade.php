@@ -1,4 +1,4 @@
-<?php 
+<?php
   use App\Category;
   use App\Job;
   use App\Employeer;
@@ -7,8 +7,8 @@
 	<head>
 
 		<link rel="icon" href="https://www.pinclipart.com/picdir/big/198-1980971_sixdays-bremen-transparent-loading-circle-gif-clipart.png" type="image/icon type">
-        
-		<title>Opportinity</title>
+
+		<title>Job portal</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -28,8 +28,8 @@
 	    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 	     <!-- Styles -->
-    	
-         
+
+
 
         <style type="text/css">
           body bg-light
@@ -63,7 +63,7 @@
 			.dropdown-menu > li > a:hover:after {
 			    text-decoration: underline;
 			    transform: rotate(-90deg);
-			} 
+			}
 			#footer a:hover
 			{
 				text-decoration: underline;
@@ -114,7 +114,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a href="{{route('home')}}" class="dropdown-item">Dashboard</a>
                                 <a class="dropdown-item" href="/users/view_profile">
-                                       {{ __('Profile') }} 
+                                       {{ __('Profile') }}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -173,23 +173,23 @@
         		<img src="https://www.pinclipart.com/picdir/big/198-1980971_sixdays-bremen-transparent-loading-circle-gif-clipart.png" width="20px" height="20px"/><b> pportunity</b>
         	</div>
         	<div class="col-lg-2 p-4">
-        		<li>About Opportunity</li>
+        		<li>About us</li>
         		<li>Terms</li>
         		<li>Privacy Policy</li>
         	</div>
         	<div class="col-lg-2 p-4">
         		<li>Help Center</li>
         		<li>Cookies</li>
-        		
+
         	</div>
         	<div class="col-lg-2 p-4">
         		<li><a href="/">Worked at Opportunity</a></li>
         		<li>Terms</li>
-        		
+
         	</div>
         </div>
         <div class="container-fluid text-center" style="margin: 0; padding:1%;list-style: none;">
-        	<small>2020 &copy; Oppotunity, Dhaka, Bangladesh</small>
+        	<small>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Job portal, Khorezm, Shavat</small>
         </div>
 	</body>
 </html>

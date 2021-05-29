@@ -1,6 +1,6 @@
-<?php 
-	use App\Job; 
-	use App\Employeer; 
+<?php
+	use App\Job;
+	use App\Employeer;
 	use App\Application;
 ?>
 @extends('layout.app')
@@ -42,7 +42,7 @@
 											</a>
 										</td>
 										<td>
-											<a href='/jobs/edit/{{$job->job_id}}' style="color: blue; text-decoration: underline;">Edit</a> | 
+											<a href='/jobs/edit/{{$job->job_id}}' style="color: blue; text-decoration: underline;">Edit</a> |
 											<a href='/jobs/delete/{{$job->job_id}}' style="color: blue; text-decoration: underline;">Delete</a>
 										</td>
 									</tr>

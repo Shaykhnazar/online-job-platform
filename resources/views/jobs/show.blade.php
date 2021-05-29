@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 @extends('layout.app')
 @section('content')
-<?php 
+<?php
   use App\Category;
   use App\Employeer;
   use App\Application;
@@ -65,7 +65,7 @@
               <div class="mb-3">
                 {{ make_list($job->education) }}
               </div>
-              
+
               <h5>Experience Requirements</h5>
               <div class="mb-3">
                 {{ make_list($job->requirements) }}
@@ -76,7 +76,7 @@
               </div>
               <h5>Job Location</h5>
               <div style="list-style: none;" class="mb-3">
-                {{ make_list($job->location) }}
+                {{ make_list(($job->region->name)??"") }}
               </div>
               <h5>Salary</h5>
               <div style="list-style: none;" class="mb-3">
@@ -108,7 +108,7 @@
                 @php
                   $applied = 0
                 @endphp
-                @if(Auth::guard('web')->check())
+                @if(Auth::guard('user')->check())
                   @foreach(Application::where('user_id', '=', Auth::user()->id)->where('job_id', '=', $job->job_id)->get() as $application)
                     @if ($application->count() > 0)
                       <div class="card">
@@ -123,7 +123,7 @@
                     @endif
                   @endforeach
                 @endif
-                @if ($applied == 0)
+                @if ($applied == 0 && Auth::guard('user')->check())
                   <a href="/apply/{{$job->job_id}}">
                       <button type="button" class="btn btn-primary btn btn-block mb-2"><b>Apply this job</b></button>
                   </a>
@@ -153,7 +153,7 @@
                   </a>
                   <a href='/'  class="list-group-item align-items-center">
                     <i class="far fa-star"></i> Rate this Job/Company
-                   
+
                   </a>
                   <a href='/'  class="list-group-item align-items-center">
                     <i class="far fa-question-circle"></i> Report this Job/Company

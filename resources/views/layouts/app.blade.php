@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -36,7 +37,7 @@
 
                     </ul>
 
-                    <!-- Right Side Of Navbar 
+                    <!-- Right Side Of Navbar
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -66,7 +67,7 @@
                             </li>
                         @endguest
                     </ul> -->
-                    @if(Auth::guard('user')->check())
+                @if(Auth::guard('user')->check())
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::guard('user')->user()->name }} Job Seeker<span class="caret"></span>

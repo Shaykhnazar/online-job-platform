@@ -11,14 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@main')->name('main');
 /*Route::get('/jobs', function () {
     return view('jobs');
 });*/
 
-Route::get('/jobs', 'JobController@index');
+Route::get('/jobs', 'JobController@index')->name('jobs.index');
 Route::get('/jobs/create', 'JobController@create');
 Route::post('/jobs/store', 'JobController@store');
 Route::get('/jobs/show/{job_id}', 'JobController@show');
@@ -49,6 +47,10 @@ Route::get('/categories/show/{category_id}', 'CategoryController@show');
 Route::get('/categories/edit/{category_id}', 'CategoryController@edit');
 Route::post('/categories/update/{category_id}', 'CategoryController@update');
 Route::get('/categories/delete/{category_id}', 'CategoryController@destroy');
+
+//Skills Crud
+
+Route::resource('skills', 'SkillsController' )->except(['show']);
 
 //User Personal Information
 Route::resource('/users/personalinfo', 'PersonalinfoController');

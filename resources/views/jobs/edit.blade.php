@@ -1,5 +1,5 @@
-<?php 
-	use App\Category; 
+<?php
+	use App\Category;
 ?>
 @extends('layout.app')
 @section('content')
@@ -35,11 +35,9 @@
 			    <div class="form-group col-md-2">
 				    <label for="exampleFormControlSelect1">Employment Status</label>
 				    <select class="form-control"  name="employment_type">
-				      <option selected value="{{$job->employment_type}}">{{$job->employment_type}}</option>
-				      <option value="Full-time">Full-time</option>
-				      <option value="Part-time">Part-time</option>
-				      <option value="Internship">Internship</option>
-				      <option value="Contractual">Contractual</option>
+                        @foreach(\App\Job::$TYPE as $key => $type)
+                            <option value="{{$key}}" {{ ($job->employment_type == $key) ? 'selected' : '' }}>{{$type}}</option>
+                        @endforeach
 				    </select>
 			  </div>
 			  <div class="form-group col-md-2">
@@ -48,15 +46,10 @@
 			  </div>
 			    <div class="form-group col-md-2">
 			      <label for="inputState">Location</label>
-			      <select id="inputState" class="form-control" name="location">
-			      	<option selected value="{{$job->location}}">{{$job->location}}</option>
-			        <option value="Dhaka">Dhaka</option>
-			        <option value="Chattagram">Chattagram</option>
-			        <option value="Khulna">Khulna</option>
-			        <option value="Sylhet">Sylhet</option>
-			        <option value="Barisal">Barisal</option>
-			        <option value="Gazipur">Gazipur</option>
-			        <option value="Anywhere in Bangladesh">Anywhere in Bangladesh</option>
+			      <select id="inputState" class="form-control" name="region_id">
+                      @foreach(\App\Region::get(['id', 'name']) as $region)
+                          <option value="{{$region->id}}" {{ ($job->region_id == $region->id) ? 'selected' : '' }}>{{$region->name}}</option>
+                      @endforeach
 			      </select>
 			    </div>
 			    <div class="form-group col-md-3">
@@ -69,8 +62,8 @@
 			      </select>
 			    </div>
 			    <div class="form-group col-md-3">
-			      <label>Age Range</label>
-			      <input type="text" class="form-control" name="age" value="{{$job->age}}">
+			      <label>Age Range = <span id="rangeValue"></span></label>
+			      <input id="rangeInput" type="range" class="form-control" name="age" value="{{$job->age}}" min="18" max="99">
 			    </div>
 			  </div>
 			  <div class="form-row">
@@ -125,6 +118,14 @@
 			  </div>
 			</form>
 		</div>
+        <script>
+            $(document).ready(function (){
+                document.getElementById('rangeInput').value = document.getElementById('rangeValue').value;
+            });
+            function updateTextInput(val) {
+                document.getElementById('rangeValue').value = val;
+            }
+        </script>
 	</body>
 </html>
 @endsection

@@ -43,7 +43,9 @@ class CategoryController extends Controller
         $category = new Category();
         $category->category_name = $request->category_name;
         $category->no_jobs = $request->no_jobs;
+        $category->featured = $request->featured;
         $category->save();
+
         return redirect('/categories');
     }
 
@@ -84,7 +86,8 @@ class CategoryController extends Controller
         $category = Category::Find($category_id);
         $category->category_name = $request->category_name;
         $category->no_jobs = $request->no_jobs;
-       
+        $category->featured = $request->featured;
+
         $category->save();
         return redirect('/categories');
     }

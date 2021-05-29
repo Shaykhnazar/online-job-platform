@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php 
+<?php
   use App\Category;
   use App\Employeer;
    use App\Job;
@@ -41,13 +41,13 @@
         </style>
          <?php
           function get_snippet( $str, $wordCount = 10 ) {
-            return implode( 
-              '', 
-              array_slice( 
+            return implode(
+              '',
+              array_slice(
                 preg_split(
-                  '/([\s,\.;\?\!]+)/', 
-                  $str, 
-                  $wordCount*2+1, 
+                  '/([\s,\.;\?\!]+)/',
+                  $str,
+                  $wordCount*2+1,
                   PREG_SPLIT_DELIM_CAPTURE
                 ),
                 0,
@@ -56,38 +56,38 @@
             );
           }
 
-          function to_time_ago( $time ) { 
-      
-            // Calculate difference between current 
-            // time and given timestamp in seconds 
-            $diff = time() - $time; 
-              
-            if( $diff < 1 ) {  
-                return 'less than 1 second ago';  
-            } 
-              
-            $time_rules = array (  
-                        12 * 30 * 24 * 60 * 60 => 'year', 
-                        30 * 24 * 60 * 60       => 'month', 
-                        24 * 60 * 60           => 'day', 
-                        60 * 60                   => 'hour', 
-                        60                       => 'minute', 
+          function to_time_ago( $time ) {
+
+            // Calculate difference between current
+            // time and given timestamp in seconds
+            $diff = time() - $time;
+
+            if( $diff < 1 ) {
+                return 'less than 1 second ago';
+            }
+
+            $time_rules = array (
+                        12 * 30 * 24 * 60 * 60 => 'year',
+                        30 * 24 * 60 * 60       => 'month',
+                        24 * 60 * 60           => 'day',
+                        60 * 60                   => 'hour',
+                        60                       => 'minute',
                         1                       => 'second'
-            ); 
-          
-            foreach( $time_rules as $secs => $str ) { 
-                  
-                $div = $diff / $secs; 
-          
-                if( $div >= 1 ) { 
-                      
-                    $t = round( $div ); 
-                      
-                    return $t . ' ' . $str .  
-                        ( $t > 1 ? 's' : '' ) . ' ago'; 
-                } 
-            } 
-        } 
+            );
+
+            foreach( $time_rules as $secs => $str ) {
+
+                $div = $diff / $secs;
+
+                if( $div >= 1 ) {
+
+                    $t = round( $div );
+
+                    return $t . ' ' . $str .
+                        ( $t > 1 ? 's' : '' ) . ' ago';
+                }
+            }
+        }
         ?>
     </head>
     <body>
@@ -109,7 +109,7 @@
         </div>
         <div class='row pl-4'>
           <div class='col-lg-1'>
-              <label>Filter By:</label> 
+              <label>Filter By:</label>
           </div>
           <div class='col-lg-1'>
             <div class="dropdown">
@@ -118,34 +118,33 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @foreach(Category::all() as $category)
-                  <a class="dropdown-item" href="/jobs?category={{$category->category_name}}"><option value="{{$category->category_name}}">{{$category->category_name}} ({{$category->no_jobs}})</option></a>
+                  <a class="dropdown-item" href="{{route('jobs.index', ['category' => $category->category_name]) }}"><option value="{{$category->category_name}}">{{$category->category_name}} ({{$category->no_jobs}})</option></a>
                 @endforeach
              </div>
             </div>
           </div>
-          <div class='col-lg-1'>
-            <div class="dropdown">
-              <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Deadline
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Today</a>
-                <a class="dropdown-item" href="#">Tommorow</a>
-                <a class="dropdown-item" href="#">Next 5 days</a>
-                <a class="dropdown-item" href="#">Next week</a>
-             </div>
-            </div>
-          </div>
+{{--          <div class='col-lg-1'>--}}
+{{--            <div class="dropdown">--}}
+{{--              <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                Deadline--}}
+{{--              </button>--}}
+{{--              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">--}}
+{{--                <a class="dropdown-item" href="#">Today</a>--}}
+{{--                <a class="dropdown-item" href="#">Tommorow</a>--}}
+{{--                <a class="dropdown-item" href="#">Next 5 days</a>--}}
+{{--                <a class="dropdown-item" href="#">Next week</a>--}}
+{{--             </div>--}}
+{{--            </div>--}}
+{{--          </div>--}}
           <div class='col-lg-1'>
             <div class="dropdown">
               <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Job Type
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Full-time</a>
-                <a class="dropdown-item" href="#">Part-time</a>
-                <a class="dropdown-item" href="#">Internship</a>
-                <a class="dropdown-item" href="#">Contractual</a>
+                @foreach(\App\Job::$TYPE as $key => $type)
+                  <a class="dropdown-item" href="{{route('jobs.index', ['job_type' => $key])}}">{{ $type }}</a>
+                @endforeach
              </div>
             </div>
           </div>
@@ -155,13 +154,10 @@
                 Location
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href='/jobs?location=Dhaka'>Dhaka</a>
-                <a class="dropdown-item" href='/jobs?location=Chattagram'>Chattagram</a>
-                <a class="dropdown-item" href='/jobs?location=Khulna'>Khulna</a>
-                <a class="dropdown-item" href='/jobs?location=Sylhet'>Sylhet</a>
-                <a class="dropdown-item" href='/jobs?location=Barisal'>Barisal</a>
-                <a class="dropdown-item" href='/jobs?location=Gazipur'>Gazipur</a>
-             </div>
+                  @foreach(\App\Region::get(['id', 'name']) as $region)
+                    <a class="dropdown-item" href="{{route('jobs.index', ['region_id' => $region->id] )}}">{{$region->name}}</a>
+                  @endforeach
+              </div>
             </div>
           </div>
           <div class='col-lg-1'>
@@ -170,13 +166,11 @@
                 Company
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                @foreach($jobs as $job)
-                  @foreach(Employeer::where('id', '=', $job->employeer_id)->get() as $company)
-                    <a class="dropdown-item" href="/jobs?company={{$company->id}}">
-                      <option value="{{$company->name}}">{{$company->name}}</option>
+                  @foreach(Employeer::get() as $company)
+                    <a class="dropdown-item" href="{{route('jobs.index', ['employeer_id' => $company->id]) }}">
+                      <option value="{{$company->id}}">{{$company->name}}</option>
                     </a>
                   @endforeach
-                @endforeach
              </div>
             </div>
           </div>
@@ -186,9 +180,9 @@
                Experience Level
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Entry Level</a>
-                <a class="dropdown-item" href="#">Mid Level</a>
-                <a class="dropdown-item" href="#">Senior</a>
+                @foreach(\App\Job::$EXPERIENCE_LEVEL as $key => $level)
+                  <a class="dropdown-item" href="{{route('jobs.index', ['level' => $key])}}">{{ $level }}</a>
+                @endforeach
              </div>
             </div>
           </div>
@@ -209,38 +203,16 @@
                   <li class="list-group-item d-flex bg-light justify-content-between align-items-center">
                     <b>Skills</b>
                   </li>
-                  <a href='/' class="list-group-item d-flex justify-content-between align-items-center">
-                      Fullstack
-                      <span class="badge badge-light badge-pill p-2">14</span>
-                  </a>
-                  
-                  <a href='/'  class="list-group-item d-flex justify-content-between align-items-center">
-                    Forntend
-                    <span class="badge badge-light badge-pill p-2">2</span>
-                  </a>
-                  <a href='/'  class="list-group-item d-flex justify-content-between align-items-center">
-                    Backend
-                    <span class="badge badge-light badge-pill  p-2">1</span>
-                  </a>
-                  <a href='/'  class="list-group-item d-flex justify-content-between align-items-center">
-                   Java
-                    <span class="badge badge-light badge-pill p-2">14</span>
-                  </a>
-                  <a href='/'  class="list-group-item d-flex justify-content-between align-items-center">
-                    ASP.NET
-                    <span class="badge badge-light badge-pill p-2">2</span>
-                  </a>
-                  <a href='/'  class="list-group-item d-flex justify-content-between align-items-center">
-                    PHP/Laravel
-                    <span class="badge badge-light badge-pill p-2">1</span>
-                 </a>
+                    @foreach(\App\Skill::get(['id', 'name']) as $skill)
+                      <a href="{{ route('jobs.index', ['skill_id' => $skill->id]) }}" class="list-group-item d-flex justify-content-between align-items-center">
+                          {{ $skill->name }}
+                          <span class="badge badge-light badge-pill p-2">{{ $skill->jobs()->count() }}</span>
+                      </a>
+                    @endforeach
                 </ul>
             </div>
             <div class="col-lg-6">
-              @if ($jobs->count() == 0)
-                <h6>No jobs found</h6>
-              @else
-              @foreach($jobs as $job)
+              @forelse($jobs as $job)
                 <a href="/jobs/show/{{$job->job_id}}">
                   <div class="card mb-3" id="job_post" style="width: 100%; list-style: none">
                     <div class="card-body">
@@ -270,8 +242,9 @@
                     </div>
                 </div>
               </a>
-              @endforeach
-              @endif
+              @empty
+                    <h6>No jobs found</h6>
+                @endforelse
             </div>
           </div>
         </div>

@@ -20,6 +20,16 @@ class HomeController extends Controller
     }
 
     /**
+     * Show the application main page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function main()
+    {
+        return view('index');
+    }
+
+    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
