@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ce780a3-5b70-4b01-9a69-407337b009ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/wiki_doc/Online Job platform_UseCase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wiki_doc/Online Job platform_Xmind.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +135,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/wiki_doc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
@@ -180,7 +182,7 @@
       <workItem from="1622199678798" duration="12869000" />
       <workItem from="1622283088381" duration="7887000" />
       <workItem from="1622354746898" duration="159000" />
-      <workItem from="1622358693333" duration="586000" />
+      <workItem from="1622358693333" duration="1955000" />
     </task>
     <servers />
   </component>
