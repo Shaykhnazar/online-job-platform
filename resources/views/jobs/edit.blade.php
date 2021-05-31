@@ -1,21 +1,12 @@
 <?php
 	use App\Category;
 ?>
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-<html>
-	<head>
-		<style type="text/css">
-			label
-			{
-				font-weight: bold;
-			}
-		</style>
-	</head>
-	<body>
+    @include('layouts.parts.breadcrumbs', ['title' => 'Edit Job Information'])
 		<div class="container-fluid p-5 " style="margin-top: 5%">
 			<h3 style="text-align: center;">Edit Job Information</h3>
-			<form action="/jobs/update/{{$job->job_id}}" method="post" class="card p-4 m-2 p-4 mb-5 bg-white" style='border:none; box-shadow: ;background-color: rgb(253, 253, 253);'>
+			<form action="{{ route("jobs.update", $job->job_id) }}" method="post" class="card p-4 m-2 p-4 mb-5 bg-white" style='border:none; box-shadow: ;background-color: rgb(253, 253, 253);'>
 			  @csrf
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
@@ -118,14 +109,14 @@
 			  </div>
 			</form>
 		</div>
-        <script>
-            $(document).ready(function (){
-                document.getElementById('rangeInput').value = document.getElementById('rangeValue').value;
-            });
-            function updateTextInput(val) {
-                document.getElementById('rangeValue').value = val;
-            }
-        </script>
-	</body>
-</html>
 @endsection
+@push('js')
+    <script type="text/javascript">
+        $(document).ready(function (){
+            document.getElementById('rangeInput').value = document.getElementById('rangeValue').value;
+        });
+        function updateTextInput(val) {
+            document.getElementById('rangeValue').value = val;
+        }
+    </script>
+@endpush

@@ -1,52 +1,25 @@
-
-<!DOCTYPE html>
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-<?php
-  use App\Category;
-  use App\Employeer;
-  use App\Application;
-?>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Opportunity</title>
+    <?php
+    use App\Category;
+    use App\Employeer;
+    use App\Application;
 
-        <style type="text/css">
-          a.card, a.card:hover {
-            color: inherit;
-            text-decoration: none;
-          }
-          #list{
-              list-style-position: outside;
-            }
-          .list-group a:hover
-          {
-            color: #0052cc;
-          }
-          #job_summary li
-          {
-            list-style: none;
-            border:none;
-          }
-          <?php
-             function make_list( $str ) {
-              $str = explode("\r\n", $str);  // remove the last \n or whitespace character
-              $str = array_filter($str, 'trim'); // remove any extra \r characters left behind
-              echo '<ul>';
-                foreach ($str as $line) {
-                    echo "<li style = 'list-style-position: outside;'>$line</li>";
-                }
-              echo '</ul>';
-            }
-          ?>
-        </style>
-    </head>
-    <body>
+    function make_list( $str ) {
+    $str = explode("\r\n", $str);  // remove the last \n or whitespace character
+    $str = array_filter($str, 'trim'); // remove any extra \r characters left behind
+    echo '<ul>';
+    foreach ($str as $line) {
+    echo "<li style = 'list-style-position: outside;'>$line</li>";
+    }
+    echo '</ul>';
+    }
+    ?>
 
-        <div class="container-fluid" style="margin-top: 8%">
+
+    @include('layouts.parts.breadcrumbs', ['title' => 'Show job'])
+    <div class="container-fluid" style="margin-top: 8%">
           <div class="row" style="padding: 4%">
             <div class="col-lg-7">
               <h4><b>{{$job->title}}</b></h4>
@@ -93,11 +66,11 @@
               <hr>
               <h5>Company Information</h5>
               <h6>{{ $company->name }}</h6>
-              <label>Website: <a style="text-decoration: underline;color: blue" href='{{ $company->website }}'>{{ $company->website }}</a></label><br>
+              <label>Website: <a style="text-decoration: underline;color: blue" target="_blank" href='{{ $company->website }}'>{{ $company->website }}</a></label><br>
               <label>Email: {{ $company->email }}</label><br>
               <label><b>Address:</b> {{ $company->address }}</label>
             <div class="mt-4">
-              <a href='/jobs' style='color:; text-decoration: ; padding-top: 2%'>
+              <a href='{{ route("jobs.index") }}' style='color:; text-decoration: ; padding-top: 2%'>
                 <small><i class="fas fa-chevron-left"></i>  &nbsp;</small>Back
               </a>
             </div>
@@ -109,14 +82,14 @@
                   $applied = 0
                 @endphp
                 @if(Auth::guard('user')->check())
-                  @foreach(Application::where('user_id', '=', Auth::user()->id)->where('job_id', '=', $job->job_id)->get() as $application)
+                  @foreach(Application::where('user_id', '=', Auth::guard('user')->user()->id)->where('job_id', '=', $job->job_id)->get() as $application)
                     @if ($application->count() > 0)
-                      <div class="card">
-                        <div class='card-header'><b>Applied Status</b></div>
-                        <div class='card-body'>
-                          <b>You have applied this job at</b> {{date('d-F-Y h:m A', strtotime($application->created_at)+ 6*3600) }}
+                        <div class="card">
+                            <div class='card-header'><b>Applied Status</b></div>
+                            <div class='card-body'>
+                              <b>You have applied this job at</b> {{date('d-F-Y h:m A', strtotime($application->created_at)+ 6*3600) }}
+                            </div>
                         </div>
-                      </div>
                       @php
                         $applied = 1
                       @endphp
@@ -124,7 +97,7 @@
                   @endforeach
                 @endif
                 @if ($applied == 0 && Auth::guard('user')->check())
-                  <a href="/apply/{{$job->job_id}}">
+                  <a href="{{ route("job.apply", $job->job_id) }}">
                       <button type="button" class="btn btn-primary btn btn-block mb-2"><b>Apply this job</b></button>
                   </a>
                   <button type="button" class="btn btn-light btn btn-block"><b>Save for later</b></button>
@@ -147,15 +120,15 @@
                   <li class="list-group-item d-flex bg-light justify-content-between align-items-center">
                     <b>You can</b>
                   </li>
-                  <a href='/' class="list-group-item  align-items-center">
+                  <a href='#' class="list-group-item  align-items-center">
                       <i class="far fa-share-square"></i> Share this Job
                       <!-- <span class="badge badge-light badge-pill p-2">14</span> -->
                   </a>
-                  <a href='/'  class="list-group-item align-items-center">
+                  <a href='#'  class="list-group-item align-items-center">
                     <i class="far fa-star"></i> Rate this Job/Company
 
                   </a>
-                  <a href='/'  class="list-group-item align-items-center">
+                  <a href='#'  class="list-group-item align-items-center">
                     <i class="far fa-question-circle"></i> Report this Job/Company
                   </a>
                 </ul>
@@ -163,6 +136,4 @@
           </div>
         </div>
 
-    </body>
-</html>
 @endsection

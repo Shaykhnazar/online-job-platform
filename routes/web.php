@@ -11,78 +11,69 @@
 |
 */
 
-Route::get('/', 'HomeController@main')->name('main');
-/*Route::get('/jobs', function () {
-    return view('jobs');
-});*/
+Route::get('/', 'SiteController@main')->name('main');
 
-Route::get('/jobs', 'JobController@index')->name('jobs.index');
-Route::get('/jobs/create', 'JobController@create');
-Route::post('/jobs/store', 'JobController@store');
-Route::get('/jobs/show/{job_id}', 'JobController@show');
-Route::get('/jobs/edit/{job_id}', 'JobController@edit');
-Route::post('/jobs/update/{job_id}', 'JobController@update');
-Route::get('/jobs/delete/{job_id}', 'JobController@destroy');
+Route::resource('/jobs', 'JobController');
 
 Auth::routes();
 
-//Job Seeker- User
-Route::get('/users/user_dashboard', 'HomeController@index')->name('home');
-Route::get('/users/view_profile', 'HomeController@view_profile');
-Route::get('/users/edit_profile', 'HomeController@edit_profile');
-Route::get('/users/public_profile/{user_id}', 'HomeController@public_profile');
 
+Route::group([ 'prefix' => 'employeers', 'name' => 'employeers.', 'middleware' => 'auth:employeer' ], function (){
+    //Employeer
+    Route::get('/dashboard', 'EmployeerController@index')->name('employ.dash');
+    Route::get('/view_profile', 'EmployeerController@view_profile')->name('employ.view_profile');
+    Route::get('/edit_profile', 'HomeController@edit_profile')->name('employ.edit_profile');
+    Route::get('/applicants/{job_id}', 'ApplicationController@show_applicants')->name('job.show_applicants');
 
-//Employeer
-Route::get('/employeers/dashboard', 'EmployeerController@index');
-Route::get('/users/view_profile', 'HomeController@view_profile');
-Route::get('/users/edit_profile', 'HomeController@edit_profile');
+});
 
-//Category Controller
+Route::group([ 'prefix' => 'admin', 'name' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'auth:admin'], function (){
+    Route::get('/', 'DashboardController@index')->name('admin.dash');
+    //Category Controller
+    Route::resource('categories', 'CategoryController')->except(['show']);
+    //Skills Crud
+    Route::resource('skills', 'SkillsController')->except(['show']);
+});
 
-Route::get('/categories', 'CategoryController@index');
-Route::get('/categories/create', 'CategoryController@create');
-Route::post('/categories/store', 'CategoryController@store');
-Route::get('/categories/show/{category_id}', 'CategoryController@show');
-Route::get('/categories/edit/{category_id}', 'CategoryController@edit');
-Route::post('/categories/update/{category_id}', 'CategoryController@update');
-Route::get('/categories/delete/{category_id}', 'CategoryController@destroy');
+Route::group([ 'name' => 'users.', 'prefix' => 'users' , 'middleware' => 'auth:user'], function () {
+    //Job Seeker- User
+    Route::get('/user_dashboard', 'HomeController@index')->name('home');
+    Route::get('/view_profile', 'HomeController@view_profile')->name('user.view_profile');
+    Route::get('/edit_profile', 'HomeController@edit_profile')->name('user.edit_profile');
+    Route::get('/public_profile/{user_id}', 'HomeController@public_profile')->name('user.public_profile');
 
-//Skills Crud
+    //User Personal Information
+    Route::resource('/personalinfo', 'PersonalinfoController');
+    //Education Controller
+    Route::resource('/education', 'EducationController');
+    //Apply for job
+    Route::get('/apply/{job_id}', 'ApplicationController@create')->name('job.apply');
 
-Route::resource('skills', 'SkillsController' )->except(['show']);
-
-//User Personal Information
-Route::resource('/users/personalinfo', 'PersonalinfoController');
-
-//Education Controller
-Route::get('/users/education', 'EducationController@index');
-Route::get('/users/education/create', 'EducationController@create');
-Route::post('/users/education/store', 'EducationController@store');
-Route::get('/users/education/show/{edu_id}', 'EducationController@show');
-Route::get('/users/education/edit/{edu_id}', 'EducationController@edit');
-Route::post('/users/education/update/{edu_id}', 'EducationController@update');
-Route::get('/users/education/delete/{edu_id}', 'EducationController@destroy');
+});
 
 
 ///New Multiauth
-Route::get('/login/employeer', 'Auth\LoginController@showEmployeerLoginForm');
-Route::get('/login/user', 'Auth\LoginController@showUserLoginForm');
-Route::get('/register/employeer', 'Auth\RegisterController@showEmployeerRegisterForm');
-Route::get('/register/user', 'Auth\RegisterController@showUserRegisterForm');
 
-Route::post('/login/employeer', 'Auth\LoginController@employeerLogin');
-Route::post('/login/user', 'Auth\LoginController@userLogin');
-Route::post('/register/employeer', 'Auth\RegisterController@createEmployeer');
-Route::post('/register/user', 'Auth\RegisterController@create');
+// Employer
+Route::get('/login/employeer', 'Auth\LoginController@showEmployeerLoginForm')->name('employer.login.show');
+Route::post('/login/employeer', 'Auth\LoginController@employeerLogin')->name('employer.login');
+Route::get('/register/employeer', 'Auth\RegisterController@showEmployeerRegisterForm')->name('employer.register.show');
+Route::post('/register/employeer', 'Auth\RegisterController@createEmployeer')->name('employer.register');
 
-Route::view('/home', 'home')->middleware('auth');
-Route::view('/employeer', 'employeer');
-Route::view('/user', 'user');
+// User
+Route::get('/login/user', 'Auth\LoginController@showUserLoginForm')->name('user.login.show');
+Route::post('/login/user', 'Auth\LoginController@userLogin')->name('user.login');
+Route::get('/register/user', 'Auth\RegisterController@showUserRegisterForm')->name('user.register.show');
+Route::post('/register/user', 'Auth\RegisterController@createUser')->name('user.register');
 
-//Job application
-Route::get('/apply/{job_id}', 'ApplicationController@create');
-Route::get('/employees/applicants/{job_id}', 'ApplicationController@show_applicants');
+// Admin
+Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm')->name('admin.login.show');
+Route::post('/login/admin', 'Auth\LoginController@adminLogin')->name('admin.login');
+
+// After login show dashboards
+//Route::view('/home', 'home')->middleware(['auth:user', 'auth:employeer']);
+//Route::view('/employeer', 'employeer')->middleware(['auth:employeer']);
+//Route::view('/user', 'user')->middleware(['auth:user']);
 
 
 

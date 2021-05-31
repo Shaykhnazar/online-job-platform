@@ -1,7 +1,8 @@
-@extends('layout.app')
+@extends('layouts.main')
 
 @section('content')
-<div class="container">
+    @include('layouts.parts.breadcrumbs', ['title' => 'Verify'])
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

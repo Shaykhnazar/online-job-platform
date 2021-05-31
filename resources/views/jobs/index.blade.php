@@ -3,94 +3,59 @@
   use App\Category;
   use App\Employeer;
    use App\Job;
-?>
-@extends('layout.app')
-@section('content')
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Opportunity</title>
+function get_snippet( $str, $wordCount = 10 ) {
+    return implode(
+        '',
+        array_slice(
+            preg_split(
+                '/([\s,\.;\?\!]+)/',
+                $str,
+                $wordCount*2+1,
+                PREG_SPLIT_DELIM_CAPTURE
+            ),
+            0,
+            $wordCount*2-1
+        )
+    );
+}
 
-        <style type="text/css">
-          .list-group
-          {
-            border:none;
-          }
-          i
-          {
-            color:#d9d9d9;
-          }
-          #job_post_link a:hover
-          {
-            text-decoration: underline;
-          }
-         .list-group a:hover
-          {
-            background-color: rgb(250, 250, 250);
-          }
-          #job_post > .card-title:hover
-          {
-            text-decoration: underline;
-          }
-          #job_post
-          {
-            color: black;
-          }
-        </style>
-         <?php
-          function get_snippet( $str, $wordCount = 10 ) {
-            return implode(
-              '',
-              array_slice(
-                preg_split(
-                  '/([\s,\.;\?\!]+)/',
-                  $str,
-                  $wordCount*2+1,
-                  PREG_SPLIT_DELIM_CAPTURE
-                ),
-                0,
-                $wordCount*2-1
-              )
-            );
-          }
+function to_time_ago( $time ) {
 
-          function to_time_ago( $time ) {
+    // Calculate difference between current
+    // time and given timestamp in seconds
+    $diff = time() - $time;
 
-            // Calculate difference between current
-            // time and given timestamp in seconds
-            $diff = time() - $time;
+    if( $diff < 1 ) {
+        return 'less than 1 second ago';
+    }
 
-            if( $diff < 1 ) {
-                return 'less than 1 second ago';
-            }
+    $time_rules = array (
+        12 * 30 * 24 * 60 * 60 => 'year',
+        30 * 24 * 60 * 60       => 'month',
+        24 * 60 * 60           => 'day',
+        60 * 60                   => 'hour',
+        60                       => 'minute',
+        1                       => 'second'
+    );
 
-            $time_rules = array (
-                        12 * 30 * 24 * 60 * 60 => 'year',
-                        30 * 24 * 60 * 60       => 'month',
-                        24 * 60 * 60           => 'day',
-                        60 * 60                   => 'hour',
-                        60                       => 'minute',
-                        1                       => 'second'
-            );
+    foreach( $time_rules as $secs => $str ) {
 
-            foreach( $time_rules as $secs => $str ) {
+        $div = $diff / $secs;
 
-                $div = $diff / $secs;
+        if( $div >= 1 ) {
 
-                if( $div >= 1 ) {
+            $t = round( $div );
 
-                    $t = round( $div );
-
-                    return $t . ' ' . $str .
-                        ( $t > 1 ? 's' : '' ) . ' ago';
-                }
-            }
+            return $t . ' ' . $str .
+                ( $t > 1 ? 's' : '' ) . ' ago';
         }
-        ?>
-    </head>
-    <body>
+    }
+}
+?>
+@extends('layouts.main')
+@section('content')
+    @include('layouts.parts.breadcrumbs', ['title' => 'Find job'])
         <div class="form-row pl-4 pr-4" style="margin-top: 8%; width:75%">
            <div class="form-group col-md-12">
             <form class="form-group" style="margin-top: 1%;">
@@ -213,7 +178,7 @@
             </div>
             <div class="col-lg-6">
               @forelse($jobs as $job)
-                <a href="/jobs/show/{{$job->job_id}}">
+                <a href="{{ route("jobs.show", $job->job_id) }}">
                   <div class="card mb-3" id="job_post" style="width: 100%; list-style: none">
                     <div class="card-body">
                       <h5 class="card-title" id="job_title" style="color: #0052cc"><b>{{$job->title}}</b></h5>
@@ -235,7 +200,7 @@
                       </li>
                       <small id="job_post_link">
                         <label><!-- <i style="color:#999999" class="far fa-clock"></i> --> {{to_time_ago(strtotime($job->updated_at))}} <i style="color:#b3b3b3">&#8226; </i></label>
-                        <a href="/jobs/edit/{{$job->job_id}}" style="text-decoration: ; color: #0052cc">Save Job</a>
+{{--                        <a href="{{ route("jobs.edit", $job->job_id) }}" style="text-decoration: ; color: #0052cc">Save Job</a>--}}
                         <!-- <a href="/jobs/edit/{{$job->job_id}}" style="text-decoration: ; color: #0052cc">Edit</a> <i style="color:#b3b3b3">&#8226; </i>
                         <a href="/jobs/delete/{{$job->job_id}}" style="text-decoration: ; color: #0052cc">Remove</a> -->
                       </small>
@@ -248,7 +213,4 @@
             </div>
           </div>
         </div>
-
-    </body>
-</html>
 @endsection

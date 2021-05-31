@@ -3,8 +3,9 @@
 	use App\Employeer;
 	use App\Application;
 ?>
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
+    @include('layouts.parts.breadcrumbs', ['title' => 'Employeer dashboard'])
 	<div class="container-fluid text-center" style="margin-top: 8%">
 		<label class="text-center">Employeer Information</label>
 		<h3 class="text-center">{{ Auth::guard('employeer')->user()->name }}</h3>
@@ -37,13 +38,13 @@
 										<td>{{date('d-M-Y', strtotime($job->deadline))}}</td>
 										<td>
 											{{Application::where('job_id', '=', $job->job_id)->count()}}
-											<a href='/employees/applicants/{{$job->job_id}}' style="text-decoration: underline; color: blue;">
+											<a href='{{ route("employeers.job.show_applicants", $job->job_id) }}' style="text-decoration: underline; color: blue;">
 												 (View all)
 											</a>
 										</td>
 										<td>
-											<a href='/jobs/edit/{{$job->job_id}}' style="color: blue; text-decoration: underline;">Edit</a> |
-											<a href='/jobs/delete/{{$job->job_id}}' style="color: blue; text-decoration: underline;">Delete</a>
+											<a href='{{ route("jobs.edit", $job->job_id) }}' style="color: blue; text-decoration: underline;">Edit</a> |
+											<a href='{{ route("jobs.destroy", $job->job_id) }}' style="color: blue; text-decoration: underline;">Delete</a>
 										</td>
 									</tr>
 							@endforeach

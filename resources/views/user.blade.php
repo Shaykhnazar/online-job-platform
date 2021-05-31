@@ -1,7 +1,9 @@
-@extends('layouts.auth')
+@extends('layouts.main')
 
 @section('content')
-<div class="container">
+    @include('layouts.parts.breadcrumbs', ['title' => 'User dashboard'])
+
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

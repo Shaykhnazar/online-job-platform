@@ -16,21 +16,11 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+//        $this->middleware(['auth']);
     }
 
     /**
-     * Show the application main page.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function main()
-    {
-        return view('index');
-    }
-
-    /**
-     * Show the application dashboard.
+     * Show the user dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -38,6 +28,7 @@ class HomeController extends Controller
     {
         return view('users.user_dashboard');
     }
+
     public function view_profile()
     {
         $id = Auth::user()->id;
@@ -50,7 +41,7 @@ class HomeController extends Controller
     }
     public function public_profile($user_id)
     {
-        $user = User::Find($user_id);
+        $user = User::findOrFail($user_id);
         $education = Education::orderBy('passing_year','desc')->where('user_id', '=' , $user_id)->get();
         return view('users.public_profile', compact('user', 'education'));
     }

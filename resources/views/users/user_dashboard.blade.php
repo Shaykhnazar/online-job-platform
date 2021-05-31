@@ -1,16 +1,18 @@
-<?php 
+<?php
   use App\Application;
   use App\Job;
   use App\Employeer;
 ?>
 
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-	<div class="container-fluid text-center" style="margin-top: 8%">
+    @include('layouts.parts.breadcrumbs', ['title' => 'User dashboard'])
+
+    <div class="container-fluid text-center" style="margin-top: 8%">
 		<label class="text-center">Job Seeer Information</label>
-		<h3 class="text-center">{{ Auth::guard('web')->user()->name }}</h3>
+		<h3 class="text-center">{{ Auth::guard('user')->user()->name }}</h3>
 		@php
-			$user_id = Auth::guard('web')->user()->id
+			$user_id = Auth::guard('user')->user()->id
 		@endphp
 		<nav class="mt-2">
 			  <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -26,7 +28,7 @@
 							<th>No</th><th>Job Title</th><th>Vacancy</th><th>Posted at</th><th>Deadline</th><th>Applicants</th><th>Action</th>
 						</thead>
 						<tbody>
-							
+
 						</tbody>
 					</table>
 			</div>
@@ -42,7 +44,7 @@
 					@php
 						$i = 1
 					@endphp
-					@foreach(Application::where('user_id', '=', Auth::user()->id)->get() as $application)
+					@foreach(Application::where('user_id', '=', $user_id)->get() as $application)
 					<tr>
 						@foreach (Job::where('job_id', '=', $application->job_id)->get() as $job)
 							@foreach (Employeer::where('id', '=', $job->employeer_id)->get() as $employeer)

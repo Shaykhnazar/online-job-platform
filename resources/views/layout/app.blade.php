@@ -155,7 +155,7 @@
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="login/employeer">Employeer</a>
+                            <a class="nav-link" href="/login/employeer">Employeer</a>
                         </li>
                     @endif
                 </ul>
@@ -165,7 +165,7 @@
         	@yield('content')
         </div>
         <!--Footer-->
-        <div class="row" id="footer" style="margin: 0; padding-left:; padding-top: 3% ;list-style: none;">
+        <div class="row" id="footer" style="margin: 0;  padding-top: 3% ;list-style: none;">
         	<div class="col-lg-12">
         		<hr>
         	</div>

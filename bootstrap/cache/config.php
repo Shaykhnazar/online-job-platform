@@ -104,6 +104,11 @@
         'driver' => 'session',
         'provider' => 'employeers',
       ),
+      'admin' => 
+      array (
+        'driver' => 'session',
+        'provider' => 'admin',
+      ),
       'api' => 
       array (
         'driver' => 'token',
@@ -117,6 +122,11 @@
       array (
         'driver' => 'eloquent',
         'model' => 'App\\User',
+      ),
+      'admin' => 
+      array (
+        'driver' => 'eloquent',
+        'model' => 'App\\Models\\Admin',
       ),
       'employeers' => 
       array (

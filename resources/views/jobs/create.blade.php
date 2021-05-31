@@ -2,19 +2,13 @@
 <?php
 	use App\Category;
 ?>
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-<html>
-	<head>
-		<style type="text/css">
-			label{font-weight: bold;}
-		</style>
-	</head>
-	<body>
+    @include('layouts.parts.breadcrumbs', ['title' => 'Post a Job'])
 		<div class="container-fluid p-5 " style="margin-top: 5%">
 			<h4 class="pb-2 pl-2" style="text-align: center;">Post a Job</h4>
-			<label class="pl-2 font-weight-normal">* Fill all the fields</label>
-			<form action="/jobs/store" method="post" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
+			<label class="pl-2 font-weight-normal"><i style="color: red">*</i> Fill all the fields</label>
+			<form action="{{ route("jobs.store") }}" method="post" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
 			  @csrf
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
@@ -116,11 +110,11 @@
 
 			</form>
 		</div>
-    <script>
+@endsection
+@push('js')
+    <script type="text/javascript">
         function updateTextInput(val) {
             document.getElementById('rangeValue').innerText = val;
         }
     </script>
-	</body>
-</html>
-@endsection
+@endpush

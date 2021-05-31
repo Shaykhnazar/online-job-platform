@@ -1,41 +1,7 @@
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    @include('layouts.parts.breadcrumbs', ['title' => 'View profile'])
 
-        <title>Opportunity</title>
-        <link rel="icon" href="icon.png" type="image/icon type">
-
-        <style type="text/css">
-          body{
-            color: black;
-          }
-          h5 {
-			    position: relative;
-			}
-
-			h5 span {
-			    background-color: #ffffff;
-			    padding-right: 10px;
-			}
-
-			h5:after {
-			    content:"";
-			    position: absolute;
-			    bottom: 0;
-			    left: 0;
-			    right: 0;
-			    height: 0.2em;
-			    border-top: 1px solid #d9d9d9;
-			    z-index: -1;
-			}
-        </style>
-
-    </head>
-    <body>
       <div class="container-fluid text-center" style="margin: 0; margin-top: 8%">
          <h4 class="text-center">Job Profile</h4>
       </div>
@@ -58,7 +24,7 @@
           <div class="col-lg-3">
           	<div class="">
           		<p class="text-center">
-            		<img class="rounded-circle" alt="100x100" src="https://pngimage.net/wp-content/uploads/2018/05/dummy-profile-image-png.png" width="150px" height="150px" 
+            		<img class="rounded-circle" alt="100x100" src="https://pngimage.net/wp-content/uploads/2018/05/dummy-profile-image-png.png" width="150px" height="150px"
   	          	data-holder-rendered="true">
 	            </p>
           		<h3 class="text-center">{{ Auth::user()->name }}</h3>
@@ -71,9 +37,9 @@
 
 	          		<i class="fab fa-linkedin"></i>&nbsp;
                 <a href='https://www.linkedin.com/in/nuralam39/'>https://www.linkedin.com/in/nuralam39</a><br>
-	          		
+
                 <i class="fab fa-facebook"></i>
-				      </div>          		
+				      </div>
           	</div>
           </div>
           <div class="col-lg-9" style=" list-style-position: outside;">

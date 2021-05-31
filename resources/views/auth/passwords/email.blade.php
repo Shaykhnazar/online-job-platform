@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.main')
 
 @section('content')
 <div class="container"  style="margin: 8%">>

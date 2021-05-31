@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Education;
+use Auth;
 use Illuminate\Http\Request;
 
 class EmployeerController extends Controller
@@ -16,11 +18,12 @@ class EmployeerController extends Controller
     {
         return view('employeers.dashboard');
     }
+
     public function view_profile()
     {
-        $id = Auth::user()->id;
+        $id = Auth::guard('employeer')->user()->id;
         $education = Education::orderBy('passing_year','desc')->where('user_id', '=' , $id)->get();
-        return view('employeers.view_profile', compact('education'));
+        return view('users.view_profile', compact('education'));
     }
     public function edit_profile()
     {

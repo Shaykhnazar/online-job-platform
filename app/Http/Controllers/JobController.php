@@ -42,7 +42,7 @@ class JobController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(JobRequest $request)
     {
         //
         $job = new Job();
@@ -106,7 +106,7 @@ class JobController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $job_id)
+    public function update(JobRequest $request, $job_id)
     {
         //
         $job = Job::Find($job_id);

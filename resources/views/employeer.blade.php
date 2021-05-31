@@ -1,7 +1,9 @@
-@extends('layout.app')
+@extends('layouts.main')
 
 @section('content')
-<div class="container" style="margin-top: 8%">
+    @include('layouts.parts.breadcrumbs', ['title' => 'Employeer dashboard'])
+
+    <div class="container" style="margin-top: 8%">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
