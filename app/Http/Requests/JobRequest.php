@@ -9,19 +9,6 @@ final class JobRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'main' => [
-                'category' => [
-                    'string', 'nullable'
-                ],
-
-                'region_id' => [
-                    'integer', 'nullable'
-                ],
-
-                'search' => [
-                    'string', 'nullable'
-                ]
-            ],
 
             'jobs.index' => [
                 'category' => [

@@ -40,11 +40,11 @@ class CategoryController extends Controller
     {
         $category = new Category();
         $category->category_name = $request->category_name;
-        $category->no_jobs = $request->no_jobs;
+        $category->no_jobs = 0;
         $category->featured = $request->featured;
         $category->save();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -83,11 +83,10 @@ class CategoryController extends Controller
         //
         $category = Category::Find($category_id);
         $category->category_name = $request->category_name;
-        $category->no_jobs = $request->no_jobs;
         $category->featured = $request->featured;
 
         $category->save();
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -101,6 +100,6 @@ class CategoryController extends Controller
         //
         $category = Category::Find($category_id);
         $category->delete();
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('categories.index');
     }
 }

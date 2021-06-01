@@ -43,7 +43,7 @@ class SkillsController extends Controller
         $skill->featured = $request->featured;
         $skill->save();
 
-        return redirect()->route('admin.skills.index');
+        return redirect()->route('skills.index');
     }
 
     /**
@@ -73,7 +73,7 @@ class SkillsController extends Controller
         $skill->featured = $request->featured;
         $skill->save();
 
-        return redirect()->route('admin.skills.index');
+        return redirect()->route('skills.index');
     }
 
     /**
@@ -86,6 +86,6 @@ class SkillsController extends Controller
     {
         Skill::findOrFail($id)->delete();
 
-        return redirect()->route('admin.skills.index');
+        return redirect()->route('skills.index');
     }
 }

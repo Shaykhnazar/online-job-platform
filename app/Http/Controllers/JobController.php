@@ -70,6 +70,7 @@ class JobController extends Controller
 
         $job->save();
         Category::where('category_name', '=' , $request->category_name)->increment('no_jobs', 1);
+
         return redirect('/jobs');
     }
 

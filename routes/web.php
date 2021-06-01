@@ -14,6 +14,7 @@
 Route::get('/', 'SiteController@main')->name('main');
 
 Route::resource('/jobs', 'JobController');
+Route::post('/jobs/search', 'JobController@search')->name('job.search');
 
 Auth::routes();
 
@@ -27,7 +28,7 @@ Route::group([ 'prefix' => 'employeers', 'name' => 'employeers.', 'middleware' =
 
 });
 
-Route::group([ 'prefix' => 'admin', 'name' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'auth:admin'], function (){
+Route::group([ 'prefix' => 'admin', 'name' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'admin'], function (){
     Route::get('/', 'DashboardController@index')->name('admin.dash');
     //Category Controller
     Route::resource('categories', 'CategoryController')->except(['show']);

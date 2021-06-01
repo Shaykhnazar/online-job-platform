@@ -58,11 +58,11 @@ function to_time_ago( $time ) {
     @include('layouts.parts.breadcrumbs', ['title' => 'Find job'])
         <div class="form-row pl-4 pr-4" style="margin-top: 8%; width:75%">
            <div class="form-group col-md-12">
-            <form class="form-group" style="margin-top: 1%;">
+            <form class="form-group" style="margin-top: 1%;" action="{{ route('jobs.index') }}">
                 <div class="form-row" style="background-color:white">
                   <div class="form-group col-md-8">
                     <label><b>Search Jobs</b></label>
-                    <input type="text" class="form-control" style="border-radius:0px;" name='search' placeholder="Search by Job title, keyword, location or company">
+                    <input type="text" class="form-control" style="border-radius:0px;" name='search' value="{{ request()->has('search') ? request()->get('search') : '' }}"  placeholder="Search by Job title, keyword, location or company">
                   </div>
                   <div class="form-group col-md-4">
                      <label>&nbsp;</label>
@@ -168,7 +168,7 @@ function to_time_ago( $time ) {
                   <li class="list-group-item d-flex bg-light justify-content-between align-items-center">
                     <b>Skills</b>
                   </li>
-                    @foreach(\App\Skill::get(['id', 'name']) as $skill)
+                    @foreach(\App\Skill::featured()->get(['id', 'name']) as $skill)
                       <a href="{{ route('jobs.index', ['skill_id' => $skill->id]) }}" class="list-group-item d-flex justify-content-between align-items-center">
                           {{ $skill->name }}
                           <span class="badge badge-light badge-pill p-2">{{ $skill->jobs()->count() }}</span>

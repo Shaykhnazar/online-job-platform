@@ -17,7 +17,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">@lang('Xush kelibsiz!')</h1>
                                 </div>
-                                <form class="user" method="POST" action="{{ route('user.login') }}">
+                                <form class="user" method="POST" action="{{ route('admin.login') }}">
                                     @csrf
                                     <div class="form-group row">
                                         <div class="col-md-12">
@@ -56,10 +56,10 @@
                                         </div>
                                     </div>
                                 </form>
-                                <hr>
-                                <div class="text-center">
-                                    <a class="small" href="{{ route('user.register.show') }}">{{ __('Ro\'yxatdan o\'tish!') }}</a>
-                                </div>
+{{--                                <hr>--}}
+{{--                                <div class="text-center">--}}
+{{--                                    <a class="small" href="{{ route('user.register.show') }}">{{ __('Ro\'yxatdan o\'tish!') }}</a>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>

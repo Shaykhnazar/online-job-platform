@@ -1,20 +1,7 @@
 @extends('layout.app')
 @section('content')
-<html>
-	<head>
-		<style type="text/css">
-			label
-			{
-				font-weight: bold;
-			}
-			body
-			{
 
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container-fluid p-5 " style="margin-top: 5%">
+		<div class="container-fluid p-5 ">
 			<h4 class="pb-2 pl-2" style="text-align: center;">Add New Skill</h4>
 			<a class='m-2' href='{{ route("skills.index") }}' style="color: blue; text-decoration: underline;"> View all</a>
 			<form action="{{ route("skills.store") }}" method="post" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
@@ -42,6 +29,5 @@
 			  </div>
 			</form>
 		</div>
-	</body>
-</html>
+
 @endsection

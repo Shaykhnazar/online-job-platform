@@ -1,28 +1,21 @@
-@extends('layout.app')
+@extends('layouts.admin')
 @section('content')
-<html>
-	<head>
-		<style type="text/css"></style>
-	</head>
-	<body>
-		<div class="container-fluid p-5 " style="margin-top: 5%">
+
+        <div class="container-fluid p-5 ">
 			<h4 class="pb-2 pl-2" style="text-align: center;">Edit Category Information</h4>
-			<a class='m-2' href='{{ route('admin.categories.index') }}' style="color: blue; text-decoration: underline;"> View all</a>
-			<form action="{{ route('admin.categories.update', $category->category_id) }}" method="post" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
+			<a class='m-2' href='{{ route('categories.index') }}' style="color: blue; text-decoration: underline;"> View all</a>
+			<form action="{{ route('categories.update', $category->category_id) }}" method="post" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
 			  @csrf
+                @method('PUT')
 			  <div class="form-row">
 			  	<div class="form-group col-md-1">
-				    <label>Category ID</label>
+				    <label>ID</label>
 				    <p class="form-control">{{$category->category_id}}</p>
 			  	</div>
 			    <div class="form-group col-md-4">
 				    <label>Category Name</label>
 				    <input type="text" class="form-control"  name="category_name" value="{{$category->category_name}}">
 			  	</div>
-			    <div class="form-group col-md-2">
-			      <label>Number of current Job</label>
-			      <input type="number" class="form-control"  name="no_jobs" value="{{$category->no_jobs}}">
-			    </div>
 			    <div class="form-group col-md-2">
 			      <label>Featured</label>
                     <select name="featured" class="form-control">
@@ -37,6 +30,5 @@
 			  </div>
 			</form>
 		</div>
-	</body>
-</html>
+
 @endsection

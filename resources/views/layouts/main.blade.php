@@ -38,7 +38,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-                <a href="{{ route('main') }}"><img src="/front_assets/img/logo.png" alt="" title="" /></a>
+                <a href="{{ route('main') }}"><img src="{{ asset('logo_mini_new.png') }}" alt="" title="" /> <b><span class="header-text" style="color: white; font-size: large; margin-left: 5px;">Job portal</span></b></a>
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
@@ -153,12 +153,13 @@
         <div class="row">
             <div class="col-lg-3  col-md-12">
                 <div class="single-footer-widget">
-                    <h6>Top Products</h6>
+                    <h6>Contents</h6>
                     <ul class="footer-nav">
-                        <li><a href="#">Managed Website</a></li>
-                        <li><a href="#">Manage Reputation</a></li>
-                        <li><a href="#">Power Tools</a></li>
-                        <li><a href="#">Marketing Service</a></li>
+                        <li><a href="{{ route('jobs.index') }}">Jobs</a></li>
+                        <li><a href="#">Posts</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About us</a></li>
                     </ul>
                 </div>
             </div>
@@ -190,14 +191,9 @@
                 <div class="single-footer-widget mail-chimp">
                     <h6 class="mb-20">Instragram Feed</h6>
                     <ul class="instafeed d-flex flex-wrap">
-                        <li><img src="/front_assets/img/i1.jpg" alt=""></li>
-                        <li><img src="/front_assets/img/i2.jpg" alt=""></li>
-                        <li><img src="/front_assets/img/i3.jpg" alt=""></li>
-                        <li><img src="/front_assets/img/i4.jpg" alt=""></li>
-                        <li><img src="/front_assets/img/i5.jpg" alt=""></li>
-                        <li><img src="/front_assets/img/i6.jpg" alt=""></li>
-                        <li><img src="/front_assets/img/i7.jpg" alt=""></li>
-                        <li><img src="/front_assets/img/i8.jpg" alt=""></li>
+                        @for($i=1; $i<=8; $i++)
+                            <li><img src="/front_assets/img/i{{$i}}.jpg" alt=""></li>
+                        @endfor
                     </ul>
                 </div>
             </div>
@@ -210,10 +206,10 @@
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             <div class="col-lg-4 col-sm-12 footer-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-behance"></i></a>
+                <a href="https://www.facebook.com/shayxnazar.madaminov.1" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/shayxnazar_/" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="https://t.me/Shaykhnazar" target="_blank"><i class="fa fa-telegram"></i></a>
+                <a href="https://vk.com/shayxnazar" target="_blank"><i class="fa fa-vk"></i></a>
             </div>
         </div>
     </div>

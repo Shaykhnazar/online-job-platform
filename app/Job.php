@@ -91,4 +91,13 @@ class Job extends Model
                 });
         });
     }
+
+    /**
+     * @param Builder $query
+     * @return int
+     */
+    public static function scopeLastWeekJobsCount(Builder $query): int
+    {
+        return $query->where('created_at','>=', \Carbon\Carbon::today()->subDays(7))->count();
+    }
 }

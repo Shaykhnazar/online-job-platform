@@ -1,15 +1,10 @@
-@extends('layout.app')
+@extends('layouts.admin')
 @section('content')
-<html>
-	<head>
-		<style type="text/css">
-		</style>
-	</head>
-	<body>
-		<div class="container-fluid p-5 " style="margin-top: 5%">
+
+		<div class="container-fluid p-5 ">
 			<h4 class="pb-2 pl-2 mb-2" style="text-align: center;">All Categories List</h4>
-			<button class='btn btn-primary btn-sm m-2'>
-				<a class='m-2' href='{{ route('admin.categories.create') }}'> <b>+ New Category</b></a>
+			<button class='btn btn-success btn-sm m-2'>
+				<a class='m-2' href='{{ route('categories.create') }}'> <b style="color: white">+ New Category</b></a>
 			</button>
 			<table class="table text-center">
 				<thead>
@@ -29,14 +24,18 @@
 							<td>{{$category->no_jobs}}</td>
 							<td>{{ ($category->featured) ? 'Yes' : 'No'}}</td>
 							<td>
-								<a href='{{ route('admin.categories.edit',$category->category_id) }}' style="color: blue; text-decoration: underline;">Edit</a> |
-								<a href='{{ route('admin.categories.destroy', $category->category_id) }}' style="color: blue; text-decoration: underline;">Delete</a>
+								<a href='{{ route('categories.edit',$category->category_id) }}' style="color: blue; text-decoration: underline;">Edit</a> |
+                                <form method="post" action="{{ route('categories.destroy', $category->category_id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-sm btn btn-danger">Delete</button>
+                                </form>
+{{--                                <button data-url='{{ route('categories.destroy', $category->category_id) }}' class="delete-btn" style="color: blue; text-decoration: underline;">Delete</button>--}}
 							</td>
 						</tr>
 					@endforeach
 				</tbody>
 			</table>
 		</div>
-	</body>
-</html>
+@include('admin.delete_confirm_modal')
 @endsection

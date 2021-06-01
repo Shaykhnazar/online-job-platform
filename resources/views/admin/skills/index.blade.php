@@ -1,15 +1,9 @@
-@extends('layout.app')
+@extends('layouts.admin')
 @section('content')
-<html>
-	<head>
-		<style type="text/css">
-		</style>
-	</head>
-	<body>
-		<div class="container-fluid p-5 " style="margin-top: 5%">
+		<div class="container-fluid p-5 " >
 			<h4 class="pb-2 pl-2 mb-2" style="text-align: center;">All Skills List</h4>
-			<button class='btn btn-primary btn-sm m-2'>
-				<a class='m-2' href='{{ route('admin.skills.create') }}'> <b>+ New Skill</b></a>
+			<button class='btn btn-success btn-sm m-2'>
+				<a class='m-2' href='{{ route('skills.create') }}'> <b style="color: white">+ New Skill</b></a>
 			</button>
 			<table class="table text-center">
 				<thead>
@@ -29,6 +23,7 @@
 							<td>
 								<a href='{{ route("skills.edit", $item->id )}}' style="color: blue; text-decoration: underline;">Edit</a> |
 								<form method="post" action="{{ route('skills.destroy', $item->id) }}">
+                                    @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-sm btn btn-danger">Delete</button>
                                 </form>
@@ -38,6 +33,5 @@
 				</tbody>
 			</table>
 		</div>
-	</body>
-</html>
+
 @endsection
