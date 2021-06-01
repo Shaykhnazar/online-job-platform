@@ -42,11 +42,12 @@ class JobController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(JobRequest $request)
+    public function store(Request $request)
     {
-        //
         $job = new Job();
-        //return response()->json($request);
+
+//        dd($request->validated()); die;
+
         $job->employeer_id = Auth::guard('employeer')->user()->id;
         $job->category = $request->category_name;
         $job->job_context = $request->job_context;
@@ -71,7 +72,7 @@ class JobController extends Controller
         $job->save();
         Category::where('category_name', '=' , $request->category_name)->increment('no_jobs', 1);
 
-        return redirect('/jobs');
+        return redirect()->route('jobs.index')->withInput();
     }
 
     /**
@@ -82,8 +83,8 @@ class JobController extends Controller
      */
     public function show($job_id)
     {
-        //
         $job = Job::Find($job_id);
+
         return view('jobs/show', compact('job'));
     }
 
@@ -95,8 +96,8 @@ class JobController extends Controller
      */
     public function edit($job_id)
     {
-        //
         $job = Job::Find($job_id);
+
         return view('jobs/edit', compact('job'));
     }
 
@@ -107,7 +108,7 @@ class JobController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(JobRequest $request, $job_id)
+    public function update(Request $request, $job_id)
     {
         //
         $job = Job::Find($job_id);
@@ -140,7 +141,8 @@ class JobController extends Controller
         $job->apply_instruction = $request->apply_instruction;
 
         $job->save();
-        return redirect('/jobs');
+
+        return redirect()->route('jobs.index');
     }
 
     /**

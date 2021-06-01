@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Personalinfo;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -41,18 +42,20 @@ class PersonalinfoController extends Controller
     public function store(Request $request)
     {
        // return response()->json($request);
-        //image validation
-         $request->validate([
-         'file'  => 'required|mimes:jpg,jpeg,png|max:2048',
-        ]);
-        $img_name = time() . '.' . $request->file->extension();
-        $request->file->move(public_path('profile_photos'), $img_name);
-
         $personalinfo = new Personalinfo();
+
+        if ($request->hasFile('file'))
+        {
+            //image validation
+            $request->validate([
+                'file'  => 'required|mimes:jpg,jpeg,png|max:2048',
+            ]);
+            $personalinfo->photo = FileService::uploadCroppedImage($request->file('file'),'profile_photos');
+        }
+
 
         $personalinfo->user_id = Auth::user()->id;
         $personalinfo->full_name = $request->full_name;
-        $personalinfo->photo = "/profile_photos/" . $img_name;
         $personalinfo->father = $request->father;
         $personalinfo->mother = $request->mother;
         $personalinfo->gender = $request->gender;
@@ -68,8 +71,8 @@ class PersonalinfoController extends Controller
         $personalinfo->mobile = $request->mobile;
 
         $personalinfo->save();
-        
-        return redirect('/users/personalinfo');
+
+        return redirect()->route('personalinfo.index');
     }
 
     /**
@@ -91,9 +94,9 @@ class PersonalinfoController extends Controller
      */
     public function edit($personalinfo)
     {
-        //
         $personalinfo = Personalinfo::Find($personalinfo);
-        return view('/users/personalinfo/edit', compact('personalinfo'));
+
+        return view('users.personalinfo.edit', compact('personalinfo'));
     }
 
     /**
@@ -105,23 +108,17 @@ class PersonalinfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        //return response()->json($request);
-        //image validation
         $personalinfo = Personalinfo::Find($id);
 
-        if ($request->file)
+        if ($request->hasFile('file'))
         {
+            //image validation
             $request->validate([
-             'file'  => 'required|mimes:jpg,jpeg,png|max:2048',
+                'file'  => 'required|mimes:jpg,jpeg,png|max:2048',
             ]);
-            $img_name = time() . '.' . $request->file->extension();
-            $request->file->move(public_path('profile_photos'), $img_name);
-            $personalinfo->photo = "/profile_photos/" . $img_name;
-
+            FileService::imageDeleteFromStorage($personalinfo->photo);
+            $personalinfo->photo = FileService::uploadCroppedImage($request->file('file'),'profile_photos');
         }
-
-        //return response()->json($request->file);
 
         $personalinfo->user_id = Auth::user()->id;
         $personalinfo->full_name = $request->full_name;
@@ -139,10 +136,9 @@ class PersonalinfoController extends Controller
         $personalinfo->website = $request->website;
         $personalinfo->mobile = $request->mobile;
 
-        //return response()->json($personalinfo);
         $personalinfo->save();
-        
-        return redirect('/users/personalinfo');
+
+        return redirect()->route('personalinfo.index');
     }
 
     /**

@@ -7,7 +7,8 @@
 @extends('layouts.main')
 @section('content')
     @include('layouts.parts.breadcrumbs', ['title' => 'Applicants'])
-    <div class="container-fluid" style="margin-top: 8%">
+
+    <div class="container-fluid" >
 		<h3 class="text-center">{{ Auth::guard('employeer')->user()->name }}</h3>
 		@php
 			$employeer_id = Auth::guard('employeer')->user()->id;
@@ -35,8 +36,8 @@
 								<td>{{ $user->name }}</td>
 								<td>{{date('d-M-Y', strtotime($applicant->created_at))}}</td>
 								<td>
-									<a href='{{ route("employeers.employ.view_profile", $applicant->user_id) }}' style="color: blue; text-decoration: underline;">View CV</a> |
-									<a href='{{ route("users.user.public_profile", $applicant->user_id) }}' style="color: blue; text-decoration: underline;">Delete</a>
+									<a href='{{ route("user.public_profile", $applicant->user_id) }}' style="color: blue; text-decoration: underline;">View CV</a>
+{{--									<a href='{{ route("user.public_profile", $applicant->user_id) }}' style="color: blue; text-decoration: underline;">Delete</a>--}}
 								</td>
 							</tr>
 						@endforeach

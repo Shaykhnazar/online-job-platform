@@ -1,19 +1,7 @@
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-<html>
-	<head>
-		<style type="text/css">
-			label
-			{
-				font-weight: bold;
-			}
-			body
-			{
+    @include('layouts.parts.breadcrumbs', ['title' => 'Projects edit'])
 
-			}
-		</style>
-	</head>
-	<body>
 		<div class="container-fluid p-5 " style="margin-top: 5%">
 			<h4 class="pb-2 pl-2" style="text-align: center;">Edit Educational Information</h4>
 			<a class='m-2' href='/users/education' style="color: blue; text-decoration: underline;"> View all</a>
@@ -57,6 +45,5 @@
 				</div>
 			</form>
 		</div>
-	</body>
-</html>
+
 @endsection

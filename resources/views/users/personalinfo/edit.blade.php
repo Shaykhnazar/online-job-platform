@@ -1,13 +1,7 @@
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-<html>
-	<head>
-		<style>
-			label{font-weight: bold;}
-		</style>
-		
-	</head>
-	<body>
+    @include('layouts.parts.breadcrumbs', ['title' => 'Personal info edit'])
+
 		<div class="container-fluid p-5 " style="margin-top: 5%">
 			<h4 class="pb-2 pl-2" style="text-align: center;">Edit Personal Information</h4>
 			<a class='m-2' href='/users/personalinfo' style="color: blue; text-decoration: underline;"> View Info</a>
@@ -107,39 +101,40 @@
 			  <div class="text-center">
 			  	<button type="submit" class="btn btn-primary col-lg-2 font-weight-bold text-center">Update</button>
 			  </div>
-			  
+
 			</form>
 		</div>
-	</body>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-		<script type="text/javascript">
-		    function readURL(input) {
-		        if (input.files && input.files[0]) {
-		            var reader = new FileReader();
-		            
-		            reader.onload = function (e) {
-		                $('#profile-img-tag').attr('src', e.target.result);
-		            }
-		            reader.readAsDataURL(input.files[0]);
-		        }
-		    }
-		    $("#profile-img").change(function(){
-		        readURL(this);
-		    });
 
-		    $(function() {
-		      $("input[type='file']").change(function(file) {
-		          ext = file.currentTarget.files[0].type.split('/')[1];
-		          console.log(ext);
-		          if(['jpeg', 'png', 'jpg'].includes(ext)) {
-		            $("button[type='submit']").prop('disabled', false);
-		          }
-		          else {
-		            alert("Wrong file format");
-		            $("button[type='submit']").prop('disabled', true);
-		          }
-		      }); 
-		    });
-		</script>
-</html>
 @endsection
+@push('js')
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#profile-img-tag').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#profile-img").change(function(){
+            readURL(this);
+        });
+
+        $(function() {
+            $("input[type='file']").change(function(file) {
+                ext = file.currentTarget.files[0].type.split('/')[1];
+                console.log(ext);
+                if(['jpeg', 'png', 'jpg'].includes(ext)) {
+                    $("button[type='submit']").prop('disabled', false);
+                }
+                else {
+                    alert("Wrong file format");
+                    $("button[type='submit']").prop('disabled', true);
+                }
+            });
+        });
+    </script>
+@endpush

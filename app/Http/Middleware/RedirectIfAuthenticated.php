@@ -21,13 +21,13 @@ class RedirectIfAuthenticated
         if ($guard == "employeer" && Auth::guard($guard)->check()) {
                 return redirect()->route('employ.dash');
             }
-        if ($guard == "user" && Auth::guard($guard)->check()) {
+        elseif ($guard == "user" && Auth::guard($guard)->check()) {
                 return redirect()->route('home');
             }
-        if ($guard == "admin" && Auth::guard($guard)->check()) {
+        elseif ($guard == "admin" && Auth::guard($guard)->check()) {
                 return redirect()->route('admin.dash');
             }
-        if (Auth::guard($guard)->check()) {
+        elseif (Auth::guard($guard)->check()) {
             return redirect(RouteServiceProvider::HOME);
         }
 

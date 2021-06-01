@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.admin')
 @section('content')
 
 		<div class="container-fluid p-5 " >
@@ -9,7 +9,7 @@
                 @csrf
 			  <div class="form-row">
 			  	<div class="form-group col-md-1">
-				    <label>Category ID</label>
+				    <label>ID</label>
 				    <p class="form-control">{{$item->id}}</p>
 			  	</div>
 			    <div class="form-group col-md-4">

@@ -1,22 +1,16 @@
-@extends('layout.app')
+@extends('layouts.main')
 @section('content')
-<html>
-	<head>
-		<style>
-			label{font-weight: bold;}
-		</style>
-		
-	</head>
-	<body>
+    @include('layouts.parts.breadcrumbs', ['title' => 'Personal info add'])
+
 		<div class="container-fluid p-5 " style="margin-top: 5%">
 			<h4 class="pb-2 pl-2" style="text-align: center;">Personal Information</h4>
-			<a class='m-2' href='/users/personalinfo' style="color: blue; text-decoration: underline;"> View Info</a>
+			<a class='m-2' href='{{ route("personalinfo.index") }}' style="color: blue; text-decoration: underline;"> View Info</a>
 			<br><label class='m-2'>Profile of <b>{{Auth::user()->name}}</b></label>
-			<form action="/users/personalinfo" method="post" enctype="multipart/form-data" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
+			<form action="{{ route("personalinfo.store") }}" method="POST" enctype="multipart/form-data" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
 			  @csrf
 			  <div class="form-row mb-2">
 			    <div class="form-group col-md-4">
-			    	<label>Profile Iamge</label>
+			    	<label>Profile Image</label>
 				    <input type="file" name="file" id="profile-img">
 				    <br><small class="pt-4">Selected image</small><br>
 					<img class="mt-2" src="" id="profile-img-tag" width="200px" />
@@ -104,38 +98,39 @@
 			  <div class="text-center">
 			  	<button type="submit" class="btn btn-primary col-lg-2 font-weight-bold text-center">Save</button>
 			  </div>
-			  
+
 			</form>
 		</div>
-	</body>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-		<script type="text/javascript">
-		    function readURL(input) {
-		        if (input.files && input.files[0]) {
-		            var reader = new FileReader();
-		            
-		            reader.onload = function (e) {
-		                $('#profile-img-tag').attr('src', e.target.result);
-		            }
-		            reader.readAsDataURL(input.files[0]);
-		        }
-		    }
-		    $("#profile-img").change(function(){
-		        readURL(this);
-		    });
-		    $(function() {
-		      $("input[type='file']").change(function(file) {
-		          ext = file.currentTarget.files[0].type.split('/')[1];
-		          console.log(ext);
-		          if(['jpeg', 'png'].includes(ext)) {
-		            $("button[type='submit']").prop('disabled', false);
-		          }
-		          else {
-		            alert("Wrong file format");
-		            $("button[type='submit']").prop('disabled', true);
-		          }
-		      }); 
-		    });
-		</script>
-</html>
+
 @endsection
+@push('js')
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#profile-img-tag').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#profile-img").change(function(){
+            readURL(this);
+        });
+        $(function() {
+            $("input[type='file']").change(function(file) {
+                ext = file.currentTarget.files[0].type.split('/')[1];
+                console.log(ext);
+                if(['jpeg', 'png'].includes(ext)) {
+                    $("button[type='submit']").prop('disabled', false);
+                }
+                else {
+                    alert("Wrong file format");
+                    $("button[type='submit']").prop('disabled', true);
+                }
+            });
+        });
+    </script>
+@endpush

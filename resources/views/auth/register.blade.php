@@ -17,7 +17,8 @@
                     </div>
                         <div class="card-body bg-light" style="border-radius: 10px;">
                             @if(isset($url) && $url == 'user')
-                                <form method="POST" action='{{ route('user.register') }}' aria-label="{{ __('Register') }}">
+                                <form method="POST" action='{{ route("user.register") }}' aria-label="{{ __('Register') }}">
+                                    @method('POST')
                                     @csrf
                                     <div class="form-group row pt-3" width="70%">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -83,11 +84,21 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label>{{ __('Employeer Name') }}</label>
-                                            <input type="text" class="form-control" name="name">
+                                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name">
+                                            @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label>{{ __('Website') }}</label>
-                                            <input id="website" type="text" class="form-control" name="website">
+                                            <input id="website" type="text" class="form-control @error('website') is-invalid @enderror" name="website">
+                                            @error('website')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -103,16 +114,31 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label>Mobile</label>
-                                            <input type="text" class="form-control" name="mobile">
+                                            <input type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile">
+                                            @error('mobile')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <textarea class="form-control" rows="3" name="address"></textarea>
+                                        <textarea class="form-control @error('address') is-invalid @enderror" rows="3" name="address"></textarea>
+                                        @error('address')
+                                        <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>About Company</label>
-                                        <textarea class="form-control" rows="3" name="company_type"></textarea>
+                                        <textarea class="form-control @error('company_type') is-invalid @enderror" rows="3" name="company_type"></textarea>
+                                        @error('company_type')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">

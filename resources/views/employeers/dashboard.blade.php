@@ -6,7 +6,7 @@
 @extends('layouts.main')
 @section('content')
     @include('layouts.parts.breadcrumbs', ['title' => 'Employeer dashboard'])
-	<div class="container-fluid text-center" style="margin-top: 8%">
+	<div class="container-fluid text-center">
 		<label class="text-center">Employeer Information</label>
 		<h3 class="text-center">{{ Auth::guard('employeer')->user()->name }}</h3>
 		@php
@@ -38,7 +38,7 @@
 										<td>{{date('d-M-Y', strtotime($job->deadline))}}</td>
 										<td>
 											{{Application::where('job_id', '=', $job->job_id)->count()}}
-											<a href='{{ route("employeers.job.show_applicants", $job->job_id) }}' style="text-decoration: underline; color: blue;">
+											<a href='{{ route("job.show_applicants", $job->job_id) }}' style="text-decoration: underline; color: blue;">
 												 (View all)
 											</a>
 										</td>

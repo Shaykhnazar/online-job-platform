@@ -28,7 +28,7 @@ Route::group([ 'prefix' => 'employeers', 'name' => 'employeers.', 'middleware' =
 
 });
 
-Route::group([ 'prefix' => 'admin', 'name' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'admin'], function (){
+Route::group([ 'prefix' => 'admin', 'name' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['admin']], function (){
     Route::get('/', 'DashboardController@index')->name('admin.dash');
     //Category Controller
     Route::resource('categories', 'CategoryController')->except(['show']);
@@ -41,7 +41,6 @@ Route::group([ 'name' => 'users.', 'prefix' => 'users' , 'middleware' => 'auth:u
     Route::get('/user_dashboard', 'HomeController@index')->name('home');
     Route::get('/view_profile', 'HomeController@view_profile')->name('user.view_profile');
     Route::get('/edit_profile', 'HomeController@edit_profile')->name('user.edit_profile');
-    Route::get('/public_profile/{user_id}', 'HomeController@public_profile')->name('user.public_profile');
 
     //User Personal Information
     Route::resource('/personalinfo', 'PersonalinfoController');
@@ -52,6 +51,8 @@ Route::group([ 'name' => 'users.', 'prefix' => 'users' , 'middleware' => 'auth:u
 
 });
 
+//Public CV of user
+Route::get('/public_profile/{user_id}', 'HomeController@public_profile')->name('user.public_profile');
 
 ///New Multiauth
 

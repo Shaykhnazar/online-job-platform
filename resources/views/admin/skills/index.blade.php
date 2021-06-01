@@ -2,9 +2,7 @@
 @section('content')
 		<div class="container-fluid p-5 " >
 			<h4 class="pb-2 pl-2 mb-2" style="text-align: center;">All Skills List</h4>
-			<button class='btn btn-success btn-sm m-2'>
-				<a class='m-2' href='{{ route('skills.create') }}'> <b style="color: white">+ New Skill</b></a>
-			</button>
+				<a class='m-2' href='{{ route('skills.create') }}'> <b style="color: white"><button class='btn btn-success btn-sm m-2'>+ New Skill</button></b></a>
 			<table class="table text-center">
 				<thead>
 					<tr>

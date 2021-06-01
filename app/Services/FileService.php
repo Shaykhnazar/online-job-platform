@@ -56,4 +56,14 @@ class FileService
         return $content;
     }
 
+    /**
+     * Delete one image
+     *
+     * @param $file
+     * @return void
+     */
+    public static function imageDeleteFromStorage($file):void
+    {
+        Storage::disk('public')->delete($file);
+    }
 }

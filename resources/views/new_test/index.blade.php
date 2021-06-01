@@ -184,7 +184,7 @@
                     <div class="col-lg-2 col-md-4 col-sm-6">
                         <div class="single-fcat">
                             <a href="{{ route('jobs.index', ['category' => $cat->category_name]) }}">
-                                <img src="/front_assets/img/p1.png" alt="">
+                                <img class="img-thumbnail" src="{{ asset('storage/'.$cat->logo) }}" alt="">
                             </a>
                             <p>{{$cat->category_name}}</p>
                         </div>

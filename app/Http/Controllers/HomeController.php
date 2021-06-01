@@ -39,10 +39,12 @@ class HomeController extends Controller
     {
         return view('users.edit_profile');
     }
+
     public function public_profile($user_id)
     {
         $user = User::findOrFail($user_id);
         $education = Education::orderBy('passing_year','desc')->where('user_id', '=' , $user_id)->get();
+
         return view('users.public_profile', compact('user', 'education'));
     }
 }

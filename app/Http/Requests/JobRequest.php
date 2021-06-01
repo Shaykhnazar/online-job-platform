@@ -41,7 +41,6 @@ final class JobRequest extends FormRequest
             ],
 
             'jobs.store' => [
-                'employeer_id' => 'required',
                 'category' => 'required',
                 'job_context' => 'required',
                 'keywords' => 'required',
@@ -53,8 +52,6 @@ final class JobRequest extends FormRequest
                 'gender' => 'required',
                 'age' => 'required',
                 'responsibilities' => 'required',
-                'experience' => 'required',
-                'address' => 'required',
                 'education' => 'required',
                 'requirements' => 'required',
                 'additional_requirements' => 'required',
@@ -63,8 +60,7 @@ final class JobRequest extends FormRequest
                 'apply_instruction' => 'required',
             ],
 
-             'jobs.update' => [
-                'employeer_id' => 'required',
+            'jobs.update' => [
                 'category' => 'required',
                 'job_context' => 'required',
                 'keywords' => 'required',
@@ -76,8 +72,6 @@ final class JobRequest extends FormRequest
                 'gender' => 'required',
                 'age' => 'required',
                 'responsibilities' => 'required',
-                'experience' => 'required',
-                'address' => 'required',
                 'education' => 'required',
                 'requirements' => 'required',
                 'additional_requirements' => 'required',

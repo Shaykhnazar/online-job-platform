@@ -4,9 +4,9 @@
         <div class="container-fluid p-5 ">
 			<h4 class="pb-2 pl-2" style="text-align: center;">Edit Category Information</h4>
 			<a class='m-2' href='{{ route('categories.index') }}' style="color: blue; text-decoration: underline;"> View all</a>
-			<form action="{{ route('categories.update', $category->category_id) }}" method="post" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% '>
+			<form action="{{ route('categories.update', $category->category_id) }}" method="post" class="card p-4 m-2 p-4 mb-5" style='background-color: rgb(253, 253, 253); border:none; border-radius: 1% ' enctype="multipart/form-data">
 			  @csrf
-                @method('PUT')
+              @method('PUT')
 			  <div class="form-row">
 			  	<div class="form-group col-md-1">
 				    <label>ID</label>
@@ -23,9 +23,19 @@
                         <option value="0" {{ (!$category->featured) ? 'selected' : '' }}>No</option>
                     </select>
                 </div>
+                  @isset($category->logo)
+                      <div class="form-group col-md-1">
+                          <label>Current</label>
+                          <p><img class="img-thumbnail" src="{{ asset('storage/'.$category->logo) }}" alt=""></p>
+                      </div>
+                  @endisset
+                  <div class="form-group col-md-4">
+                      <label for="logo">Logo</label>
+                      <input type="file" class="form-control img-thumbnail" id="logo"  name="logo">
+                  </div>
 			    <div class="form-group col-md-2">
 			      <label>&nbsp;</label>
-			      <button type="submit" class=" form-control btn btn-primary font-weight-bold">Update</button>
+			      <button type="submit" class="form-control btn btn-primary font-weight-bold">Update</button>
 			    </div>
 			  </div>
 			</form>

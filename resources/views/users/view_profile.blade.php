@@ -30,16 +30,16 @@
           		<h3 class="text-center">{{ Auth::user()->name }}</h3>
           		<p class="text-center">Current Status</p>
           		<div class="text-muted">
-	          		<i class="fas fa-map-marker-alt"></i> &nbsp;Mirpur, Dhaka<br>
-	          		<i class="fa fa-phone"></i> &nbsp;+8801911248212<br>
-	          		<i class="fab fa-github"></i> &nbsp;https://github.com/Nur-Alam39<br>
+	          		<i class="fas fa-map-marker-alt"></i> &nbsp;{{  Auth::user()->personalInfo->present_address ?? '' }}<br>
+	          		<i class="fa fa-phone"></i> &nbsp;{{  Auth::user()->personalInfo->mobile ?? '' }}<br>
+	          		<i class="fab fa-github"></i> &nbsp;{{  Auth::user()->personalInfo->github ?? '' }}<br>
 	          		<i class="fa fa-envelope"></i> &nbsp;{{ Auth::user()->email }}<br>
 
-	          		<i class="fab fa-linkedin"></i>&nbsp;
-                <a href='https://www.linkedin.com/in/nuralam39/'>https://www.linkedin.com/in/nuralam39</a><br>
-
-                <i class="fab fa-facebook"></i>
-				      </div>
+	          		<i class="fab fa-linkedin">
+                        <a href='{{  Auth::user()->personalInfo->linkedin ?? "" }}'>{{  Auth::user()->personalInfo->linkedin ?? '' }}</a><br>
+                    </i>
+                    <i class="fab fa-facebook">{{  Auth::user()->personalInfo->facebook ?? '' }}</i>
+                </div>
           	</div>
           </div>
           <div class="col-lg-9" style=" list-style-position: outside;">

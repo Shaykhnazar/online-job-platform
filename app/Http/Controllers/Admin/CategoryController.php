@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::latest('updated_at')->paginate(10);
 
         return view('admin.categories.index', compact('categories'));
     }
@@ -42,6 +43,9 @@ class CategoryController extends Controller
         $category->category_name = $request->category_name;
         $category->no_jobs = 0;
         $category->featured = $request->featured;
+        if($request->hasFile('logo'))
+            $category->logo = FileService::uploadCroppedImage($request->file('logo'), 'category', 50, 50);
+
         $category->save();
 
         return redirect()->route('categories.index');
@@ -53,10 +57,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
-    {
-        //
-    }
+//    public function show(Category $category)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -66,8 +70,8 @@ class CategoryController extends Controller
      */
     public function edit($category_id)
     {
-        //
         $category = Category::Find($category_id);
+
         return view('admin.categories.edit', compact('category'));
     }
 
@@ -80,12 +84,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $category_id)
     {
-        //
         $category = Category::Find($category_id);
         $category->category_name = $request->category_name;
         $category->featured = $request->featured;
-
+        if($request->hasFile('logo'))
+        {
+            FileService::imageDeleteFromStorage($category->logo);
+            $category->logo = FileService::uploadCroppedImage($request->file('logo'), 'category', 50, 50);
+        }
         $category->save();
+
         return redirect()->route('categories.index');
     }
 
@@ -100,6 +108,7 @@ class CategoryController extends Controller
         //
         $category = Category::Find($category_id);
         $category->delete();
+
         return redirect()->route('categories.index');
     }
 }

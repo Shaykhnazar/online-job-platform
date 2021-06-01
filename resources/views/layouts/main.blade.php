@@ -157,7 +157,7 @@
                     <ul class="footer-nav">
                         <li><a href="{{ route('jobs.index') }}">Jobs</a></li>
                         <li><a href="#">Posts</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Advise blog</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">About us</a></li>
                     </ul>
