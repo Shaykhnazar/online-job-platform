@@ -82,7 +82,7 @@ function to_time_ago( $time ) {
                 Categories
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                @foreach(Category::all() as $category)
+                @foreach(Category::featured()->get(['category_name', 'no_jobs']) as $category)
                   <a class="dropdown-item" href="{{route('jobs.index', ['category' => $category->category_name]) }}"><option value="{{$category->category_name}}">{{$category->category_name}} ({{$category->no_jobs}})</option></a>
                 @endforeach
              </div>

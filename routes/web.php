@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'SiteController@main')->name('main');
+Route::get('/about-us', 'SiteController@about_us')->name('about_us');
+Route::get('/contact', 'SiteController@contact')->name('contact');
+Route::post('/contact', 'SiteController@contactSubmit')->name('contact.post');
 
 Route::resource('/jobs', 'JobController');
 Route::post('/jobs/search', 'JobController@search')->name('job.search');

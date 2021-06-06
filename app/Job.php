@@ -27,9 +27,9 @@ class Job extends Model
      */
     public static $TYPE = [
         'Internship' => 'Internship',
-        'Contractual' => 'Contractual',
         'Part-time' => 'Part-time',
-        'Full-time' => 'Full-time'
+        'Full-time' => 'Full-time',
+        'Contractual' => 'Contract',
     ];
 
     /**

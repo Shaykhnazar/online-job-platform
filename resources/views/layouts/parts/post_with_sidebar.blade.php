@@ -11,7 +11,7 @@
                 @foreach(\App\Job::with(['company', 'region'])->latest()->take(10)->get(['job_id', 'title', 'job_context', 'employment_type', 'salary']) as $job)
                     <div class="single-post d-flex flex-row">
                         <div class="thumb">
-                            <img src="/frontend_assets/img/post.png" alt="">
+                            <img src="{{ asset('front_assets/img/post.png') }}" alt="">
                             <ul class="tags">
                                 <li>
                                     <a href="#">Art</a>
@@ -57,52 +57,52 @@
                     </ul>
                 </div>
 
-                <div class="single-slidebar">
-                    <h4>Top rated job posts</h4>
-                    <div class="active-relatedjob-carusel">
-                        <div class="single-rated">
-                            <img class="img-fluid" src="img/r1.jpg" alt="">
-                            <a href="single.html"><h4>Creative Art Designer</h4></a>
-                            <h6>Premium Labels Limited</h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-                            </p>
-                            <h5>Job Nature: Full time</h5>
-                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-                            <a href="#" class="btns text-uppercase">Apply job</a>
-                        </div>
-                        <div class="single-rated">
-                            <img class="img-fluid" src="img/r1.jpg" alt="">
-                            <a href="single.html"><h4>Creative Art Designer</h4></a>
-                            <h6>Premium Labels Limited</h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-                            </p>
-                            <h5>Job Nature: Full time</h5>
-                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-                            <a href="#" class="btns text-uppercase">Apply job</a>
-                        </div>
-                        <div class="single-rated">
-                            <img class="img-fluid" src="img/r1.jpg" alt="">
-                            <a href="single.html"><h4>Creative Art Designer</h4></a>
-                            <h6>Premium Labels Limited</h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-                            </p>
-                            <h5>Job Nature: Full time</h5>
-                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-                            <a href="#" class="btns text-uppercase">Apply job</a>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="single-slidebar">--}}
+{{--                    <h4>Top rated job posts</h4>--}}
+{{--                    <div class="active-relatedjob-carusel">--}}
+{{--                        <div class="single-rated">--}}
+{{--                            <img class="img-fluid" src="img/r1.jpg" alt="">--}}
+{{--                            <a href="single.html"><h4>Creative Art Designer</h4></a>--}}
+{{--                            <h6>Premium Labels Limited</h6>--}}
+{{--                            <p>--}}
+{{--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.--}}
+{{--                            </p>--}}
+{{--                            <h5>Job Nature: Full time</h5>--}}
+{{--                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>--}}
+{{--                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>--}}
+{{--                            <a href="#" class="btns text-uppercase">Apply job</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="single-rated">--}}
+{{--                            <img class="img-fluid" src="img/r1.jpg" alt="">--}}
+{{--                            <a href="single.html"><h4>Creative Art Designer</h4></a>--}}
+{{--                            <h6>Premium Labels Limited</h6>--}}
+{{--                            <p>--}}
+{{--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.--}}
+{{--                            </p>--}}
+{{--                            <h5>Job Nature: Full time</h5>--}}
+{{--                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>--}}
+{{--                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>--}}
+{{--                            <a href="#" class="btns text-uppercase">Apply job</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="single-rated">--}}
+{{--                            <img class="img-fluid" src="img/r1.jpg" alt="">--}}
+{{--                            <a href="single.html"><h4>Creative Art Designer</h4></a>--}}
+{{--                            <h6>Premium Labels Limited</h6>--}}
+{{--                            <p>--}}
+{{--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.--}}
+{{--                            </p>--}}
+{{--                            <h5>Job Nature: Full time</h5>--}}
+{{--                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>--}}
+{{--                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>--}}
+{{--                            <a href="#" class="btns text-uppercase">Apply job</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="single-slidebar">
                     <h4>Jobs by Category</h4>
                     <ul class="cat-list">
-                        @foreach(\App\Category::get(['category_name', 'no_jobs']) as $cat)
+                        @foreach(\App\Category::featured()->get(['category_name', 'no_jobs']) as $cat)
                             <li><a class="justify-content-between d-flex" href="{{ route('jobs.index', ['category' => $cat->category_name]) }}"><p>{{ $cat->category_name }}</p><span>{{ $cat->no_jobs }}</span></a></li>
                         @endforeach
                     </ul>

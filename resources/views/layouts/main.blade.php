@@ -156,10 +156,10 @@
                     <h6>Contents</h6>
                     <ul class="footer-nav">
                         <li><a href="{{ route('jobs.index') }}">Jobs</a></li>
-                        <li><a href="#">Posts</a></li>
-                        <li><a href="#">Advise blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">About us</a></li>
+{{--                        <li><a href="#">Posts</a></li>--}}
+{{--                        <li><a href="#">Advise blog</a></li>--}}
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
+                        <li><a href="{{ route('about_us') }}">About us</a></li>
                     </ul>
                 </div>
             </div>
@@ -187,16 +187,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3  col-md-12">
-                <div class="single-footer-widget mail-chimp">
-                    <h6 class="mb-20">Instragram Feed</h6>
-                    <ul class="instafeed d-flex flex-wrap">
-                        @for($i=1; $i<=8; $i++)
-                            <li><img src="/front_assets/img/i{{$i}}.jpg" alt=""></li>
-                        @endfor
-                    </ul>
-                </div>
-            </div>
+{{--            <div class="col-lg-3  col-md-12">--}}
+{{--                <div class="single-footer-widget mail-chimp">--}}
+{{--                    <h6 class="mb-20">Instragram Feed</h6>--}}
+{{--                    <ul class="instafeed d-flex flex-wrap">--}}
+{{--                        @for($i=1; $i<=8; $i++)--}}
+{{--                            <li><img src="/front_assets/img/i{{$i}}.jpg" alt=""></li>--}}
+{{--                        @endfor--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
 
         <div class="row footer-bottom d-flex justify-content-between">

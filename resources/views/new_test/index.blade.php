@@ -87,7 +87,7 @@
                         <div class="default-select" id="default-selects2">
                             <select name="category">
                                 <option value="">All Category</option>
-                                @foreach(Category::get(['category_id' , 'category_name']) as $cat)
+                                @foreach(Category::featured()->get(['category_id' , 'category_name']) as $cat)
                                     <option value="{{ $cat->category_name }}">{{ $cat->category_name }}</option>
                                 @endforeach
                             </select>
